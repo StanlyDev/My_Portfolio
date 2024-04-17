@@ -7,8 +7,23 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-top: -110px;
+    margin-top: -140px;
     background-color: #212121;
+}
+
+
+.head-page {
+    background-color: transparent;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-size: 25px;
+    color: #b61c80;
+    font-style: normal;
+    margin-top: -20px;
+    top: 0;
+    left: 0;
+    cursor: pointer;
 }
 
 .port {
@@ -22,7 +37,7 @@ body {
 
 .profile-picture {
     position: absolute;
-    bottom: 35%;
+    bottom: 32%;
     left: 30%;
     border-radius: 50%;
     border: 3px solid #fff;
@@ -43,13 +58,13 @@ body {
     border: none;
     height: 40px;
     width: 100px;
-    background-color: #9e0f58;
+    background-color: #b61c80;
 }
 
 .myname p{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: -25px;
-    font-size: 15px;
+    margin-top: -30px;
+    font-size: 18px;
 }
 
 .bt-follow button:hover{
@@ -68,17 +83,51 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
     position: absolute;
-    top: 80%;
+    top: 78%;
     left: 30%;
     right: 30%;
 }
 
+.myinfo {
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #b4b4b4;
+    position: absolute;
+    top: 90%;
+    left: 30%;
+    right: 30%;
+}
+
+.myinfo,
+.job,
+.linkend{
+    padding-right: 20px;
+}
+
+.createpage{
+    padding-left: 20px;
+}
+
+.myinfo{
+    top: 88%;
+}
+
+.myinfo p {
+    float: right;
+    margin: 0;
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+
 .phrase p{
     margin-top: 1px;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 #canvas {
+    margin-top: 70px;
     width: 100%;
     height: 280px;
     z-index: 1;
