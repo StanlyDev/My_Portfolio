@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         body.style.backgroundColor = '#212121';
         myname.style.color = '#fff';
         phrase.style.color = '#fff';
-        myinfo.style.color = '#495057';
+        myinfo.style.color = '#b4b4b4';
         const icons = myinfo.querySelectorAll('lord-icon');
         icons.forEach(icon => {
             icon.setAttribute('colors', 'primary:#fff');
