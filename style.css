@@ -1,56 +1,30 @@
-*{
-    padding: 0;
-}
-
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-top: -140px;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
     background-color: #212121;
+    color: #fff;
 }
 
-
-.head-page {
-    background-color: transparent;
-    font-family: "Dancing Script", cursive;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-size: 25px;
-    color: #b61c80;
-    font-style: normal;
-    margin-top: -20px;
-    top: 0;
-    left: 0;
-    cursor: pointer;
+header {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.port {
-    width: 700px;
-    position: relative;
-}
-
-.container {
-    position: relative;
-}
-
-.profile-picture {
-    position: absolute;
-    bottom: 32%;
-    left: 30%;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    z-index: 2;
+.head-body{
+    margin-top: 50px;
 }
 
 .bt-follow{
     position: absolute;
     right: 30%;
-    margin-top: 5px;
+    margin-top: -30px;
 }
 
 .bt-follow button{
+    cursor: pointer;
     font-size: 15px;
     color: #fff;
     font-weight: bold;
@@ -61,74 +35,77 @@ body {
     background-color: #b61c80;
 }
 
-.myname p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: -30px;
-    font-size: 18px;
-}
-
 .bt-follow button:hover{
     border: 2px solid #fff;
 }
 
-.myname{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #fff;
-    position: absolute;
-    top: 65%;
-    left: 30%;
-}
 
-.phrase{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
-    position: absolute;
-    top: 78%;
-    left: 30%;
-    right: 30%;
-}
-
-.myinfo {
+.port {
     display: flex;
+    justify-content: center;
     align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #b4b4b4;
-    position: absolute;
-    top: 90%;
-    left: 30%;
-    right: 30%;
+}
+
+.container {
+    width: 100%;
+}
+
+canvas {
+    width: 700px;
+    height: 280px;
 }
 
 .myinfo,
-.job,
-.linkend{
-    padding-right: 20px;
+.job, .linkend, .bithday, .createpage{
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
 }
 
-.createpage{
-    padding-left: 20px;
+.myinfo p{
+    margin: 5px;
 }
 
-.myinfo{
-    top: 88%;
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    font-size: 24px;
 }
 
-.myinfo p {
-    float: right;
-    margin: 0;
-    margin-left: 5px;
-    font-size: 18px;
+.theme-page {
+    display: flex;
+    align-items: center;
 }
 
-
-.phrase p{
-    margin-top: 1px;
-    font-size: 18px;
+.theme-page img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 
-#canvas {
-    margin-top: 70px;
-    width: 100%;
-    height: 280px;
-    z-index: 1;
+.theme-page img:last-child {
+    margin-right: 0;
+}
+
+.profile-picture {
+    position: absolute;
+    display: block;
+    left: 30%;
+    top: 35%;
+    border-radius: 50%;
+    width: 200px;
+    border: solid 2px #fff;
+    height: auto;
+}
+
+.main-content {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
 }
