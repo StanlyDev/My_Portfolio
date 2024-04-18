@@ -14,13 +14,21 @@ header {
 }
 
 .head-body{
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .bt-follow{
     position: absolute;
     right: 30%;
     margin-top: -30px;
+}
+
+.bt-initial {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  color: #b61c80;
+  font-style: normal;
 }
 
 .bt-follow button{
@@ -59,7 +67,15 @@ canvas {
 .job, .linkend, .bithday, .createpage{
     display: flex;
     flex-direction: row;
-    margin-right: 50px;
+    margin-right: 30px;
+}
+
+.myname, p{
+    margin-top: -30px;
+}
+
+.phrase, p{
+    margin-top: -10px;
 }
 
 .myinfo p{
