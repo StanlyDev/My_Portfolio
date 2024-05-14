@@ -121,6 +121,7 @@ nav {
 
 .op-page li {
     padding: 10px;
+    padding-bottom: 0;
     transition: transform 0.5s ease;
 }
 
