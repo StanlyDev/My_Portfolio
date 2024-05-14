@@ -6,6 +6,7 @@ body {
     color: #fff;
 }
 
+main,
 header {
     padding: 20px;
     display: flex;
@@ -94,6 +95,51 @@ nav {
     font-size: 24px;
 }
 
+.light-theme nav {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.op-page ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.op-page a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.feed, .links, .about, .proyect {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 50px;
+}
+
+.op-page li {
+    padding: 10px;
+    transition: transform 0.5s ease;
+}
+
+.op-page li:hover {
+    transform: scale(1.3);
+}
+
+.op-page li:hover a {
+    color: #fff;
+}
+
+
+main {
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
 .theme-page {
     display: flex;
     align-items: center;
@@ -144,7 +190,6 @@ nav {
 @media screen and (min-width: 1600px) {
     .profile-picture {
         top: 20%;
-        left: -20%;
     }
     .head-body{
         top: 15%;
