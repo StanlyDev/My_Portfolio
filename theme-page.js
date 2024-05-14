@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const phrase = document.querySelector('.phrase');
     const myinfo = document.querySelector('.myinfo');
     const modoOscuroCheckbox = document.getElementById('modoOscuro');
-    const listaLi = document.querySelectorAll('.op-page li'); // selecciona todos los elementos li dentro de .op-page
+    const listaLi = document.querySelectorAll('.op-page li');
+    const mainP = document.querySelectorAll('.content p');
 
     modoOscuroCheckbox.addEventListener('change', function () {
         if (modoOscuroCheckbox.checked) {
