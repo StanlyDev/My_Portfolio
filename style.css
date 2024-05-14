@@ -30,6 +30,7 @@ header {
   font-weight: 700;
   color: #b61c80;
   font-style: normal;
+  cursor: default;
 }
 
 .bt-follow button{
@@ -97,7 +98,7 @@ nav {
 
 .light-theme nav {
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(70, 69, 69, 0.5);
 }
 
 .op-page ul{
@@ -120,6 +121,7 @@ nav {
 }
 
 .op-page li {
+    color: #b4b4b4;
     padding: 10px;
     padding-bottom: 0;
     transition: transform 0.5s ease;
@@ -130,9 +132,8 @@ nav {
 }
 
 .op-page li:hover a {
-    color: #fff;
+    color: #000000;
 }
-
 
 main {
     max-width: calc(100% - 40px);
