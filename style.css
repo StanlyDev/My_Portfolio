@@ -134,7 +134,7 @@ nav {
 
 @media screen and (min-width: 1400px) {
     .profile-picture {
-        top: 20%;
+        top: 25%;
     }
 }
 
@@ -142,6 +142,23 @@ nav {
     .profile-picture {
         top: 15%;
     }
+}
+
+.modoToggle {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#modoOscuro {
+    display: none;
+}
+
+#modoOscuro:checked + .modoToggle .dark-theme {
+    display: none; /* oculta la imagen del modo oscuro cuando el checkbox está marcado */
+}
+
+#modoOscuro:not(:checked) + .modoToggle .light-theme {
+    display: none; /* oculta la imagen del modo claro cuando el checkbox no está marcado */
 }
 
 
