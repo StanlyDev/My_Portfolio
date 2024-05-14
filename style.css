@@ -59,7 +59,7 @@ header {
 }
 
 canvas {
-    width: 700px;
+    width: 800px;
     height: 280px;
 }
 
@@ -130,7 +130,6 @@ nav {
     .profile-picture {
         top: 30%;
     }
-    
     .head-body{
         top: 20%;
     }
