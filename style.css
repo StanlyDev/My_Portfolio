@@ -134,13 +134,13 @@ nav {
 
 @media screen and (min-width: 1400px) {
     .profile-picture {
-        top: 25%;
+        top: 20%;
     }
 }
 
 @media screen and (min-width: 1600px) {
     .profile-picture {
-        top: 15%;
+        top: 20%;
     }
 }
 
