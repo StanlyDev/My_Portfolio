@@ -130,6 +130,10 @@ nav {
     .profile-picture {
         top: 30%;
     }
+    
+    .head-body{
+        top: 20%;
+    }
 }
 
 @media screen and (min-width: 1400px) {
@@ -140,6 +144,9 @@ nav {
 
 @media screen and (min-width: 1600px) {
     .profile-picture {
+        top: 20%;
+    }
+    .head-body{
         top: 20%;
     }
 }
