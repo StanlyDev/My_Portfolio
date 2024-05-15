@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
             listaLi.forEach(li => {
                 li.style.color = '#495057';
             });
+            mainP.forEach(p => {
+                p.style.color = 'black';
+            });
             const icons = myinfo.querySelectorAll('lord-icon');
             icons.forEach(icon => {
                 icon.setAttribute('colors', 'primary:#495057');
@@ -27,6 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
             myinfo.style.color = '#b4b4b4';
             listaLi.forEach(li => {
                 li.style.color = '#b4b4b4';
+            });
+            mainP.forEach(p => {
+                p.style.color = '#fff'
             });
             const icons = myinfo.querySelectorAll('lord-icon');
             icons.forEach(icon => {

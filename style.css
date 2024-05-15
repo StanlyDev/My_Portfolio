@@ -119,11 +119,6 @@ nav {
     font-size: 24px;
 }
 
-.light-theme nav {
-    backdrop-filter: blur(10px);
-    background-color: rgba(70, 69, 69, 0.5);
-}
-
 .op-page ul{
     list-style-type: none;
     display: flex;
@@ -171,19 +166,26 @@ main {
     padding: 0 20px;
 }
 
-.theme-page {
-    display: flex;
-    align-items: center;
+.modoToggle input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-.theme-page img {
+.modoToggle span {
+    display: inline-block;
     width: 30px;
     height: 30px;
-    margin-right: 10px;
+    background-size: cover;
 }
 
-.theme-page img:last-child {
-    margin-right: 0;
+.dark-theme {
+    background-image: url('./moon.png');
+}
+
+.light-theme {
+    background-image: url('./sun.png');
 }
 
 .profile-picture {
