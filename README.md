@@ -15,4 +15,4 @@ Javascript, HTML, CSS...
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
 
-![Logo](https://stanlydev.github.io/My_Portfolio/img/Logo.png)
+![Logo](https://stanlydev.github.io/My_Portfolio/img/MyLogo.png)
