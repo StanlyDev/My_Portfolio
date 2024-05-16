@@ -180,24 +180,15 @@ main {
     background-size: cover;
 }
 
-.dark-theme {
-    background-image: url('./moon.png');
-}
-
-.light-theme {
-    background-image: url('./sun.png');
-}
-
 .profile-picture {
     position: absolute;
-    display: block;
-    left: 30%;
-    top: 35%;
+    left: 400px;
     border-radius: 50%;
     width: 200px;
     border: solid 2px #fff;
     height: auto;
 }
+
 
 .main-content {
     max-width: 100%;
@@ -207,7 +198,7 @@ main {
 
 @media screen and (min-width: 1200px) {
     .profile-picture {
-        top: 28%;
+        top: 200px;
     }
     .head-body{
         top: 20%;
@@ -250,7 +241,48 @@ main {
     display: none;
 }
 
+.op-content{
+    margin-top: 0;
+}
+
 .op-content > .active {
     display: block;
 }
 
+.check{
+    position: relative;
+    width: 50px;
+    cursor: pointer;
+}
+
+.check::before{
+    content: '';
+    margin-top: -10px;
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background-color: #474747;
+    border-radius: 25px;
+}
+
+.check::after{
+    content: '';
+    margin-top: -10px;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    transition: 0.25s;
+    border: 2px solid #474747;
+    box-sizing: border-box;
+}
+
+.check:checked::after{
+    left: 25px;
+    border: 2px solid #b61c80;
+}
+
+.check:checked::before{
+    background-color: #b61c80;
+}

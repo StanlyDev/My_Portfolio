@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const myinfo = document.querySelector('.myinfo');
     const modoOscuroCheckbox = document.getElementById('modoOscuro');
     const listaLi = document.querySelectorAll('.op-page li');
-    const mainP = document.querySelectorAll('.content p');
+    const mainP = document.querySelectorAll('.content p, h1');
 
     modoOscuroCheckbox.addEventListener('change', function () {
         if (modoOscuroCheckbox.checked) {
