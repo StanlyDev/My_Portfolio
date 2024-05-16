@@ -114,10 +114,14 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px 20px;
     color: #fff;
     font-size: 24px;
+    backdrop-filter: blur(10px);
+    height: 40px;
+    background-color: rgba(33, 33, 33, 0.3);
 }
+
 
 .op-page ul{
     list-style-type: none;
