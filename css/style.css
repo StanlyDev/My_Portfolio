@@ -1,3 +1,4 @@
+/* Estilos base existentes */
 body {
     margin: 0;
     padding: 0;
@@ -37,26 +38,26 @@ header {
     align-items: center;
 }
 
-.head-body{
+.head-body {
     margin-top: 80px;
 }
 
-.bt-follow{
+.bt-follow {
     position: absolute;
     right: 30%;
     margin-top: -30px;
 }
 
 .bt-initial p {
-  font-family: "Dancing Script", cursive;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  color: #b61c80;
-  font-style: normal;
-  cursor: default;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    color: #b61c80;
+    font-style: normal;
+    cursor: default;
 }
 
-.bt-follow button{
+.bt-follow button {
     cursor: pointer;
     font-size: 15px;
     color: #fff;
@@ -68,10 +69,9 @@ header {
     background-color: #b61c80;
 }
 
-.bt-follow button:hover{
+.bt-follow button:hover {
     border: 2px solid #fff;
 }
-
 
 .port {
     display: flex;
@@ -89,21 +89,21 @@ canvas {
 }
 
 .myinfo,
-.job, .linkend, .bithday, .createpage{
+.job, .linkend, .bithday, .createpage {
     display: flex;
     flex-direction: row;
     margin-right: 30px;
 }
 
-.myname, p{
+.myname, p {
     margin-top: -30px;
 }
 
-.phrase, p{
+.phrase, p {
     margin-top: -10px;
 }
 
-.myinfo p{
+.myinfo p {
     margin: 5px;
 }
 
@@ -122,8 +122,7 @@ nav {
     background-color: rgba(33, 33, 33, 0.3);
 }
 
-
-.op-page ul{
+.op-page ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -188,11 +187,10 @@ main {
     position: absolute;
     left: 400px;
     border-radius: 50%;
-    width: 200px;
+    width: 180px;
     border: solid 2px #fff;
     height: auto;
 }
-
 
 .main-content {
     max-width: 100%;
@@ -202,9 +200,9 @@ main {
 
 @media screen and (min-width: 1200px) {
     .profile-picture {
-        top: 200px;
+        top: 220px;
     }
-    .head-body{
+    .head-body {
         top: 20%;
     }
 }
@@ -217,9 +215,10 @@ main {
 
 @media screen and (min-width: 1600px) {
     .profile-picture {
-        top: 20%;
+        top: 25%;
+        left: 35%;
     }
-    .head-body{
+    .head-body {
         top: 15%;
     }
 }
@@ -245,7 +244,7 @@ main {
     display: none;
 }
 
-.op-content{
+.op-content {
     margin-top: 0;
 }
 
@@ -253,13 +252,13 @@ main {
     display: block;
 }
 
-.check{
+.check {
     position: relative;
     width: 50px;
     cursor: pointer;
 }
 
-.check::before{
+.check::before {
     content: '';
     margin-top: -10px;
     position: absolute;
@@ -269,7 +268,7 @@ main {
     border-radius: 25px;
 }
 
-.check::after{
+.check::after {
     content: '';
     margin-top: -10px;
     position: absolute;
@@ -282,11 +281,96 @@ main {
     box-sizing: border-box;
 }
 
-.check:checked::after{
+.check:checked::after {
     left: 25px;
     border: 2px solid #b61c80;
 }
 
-.check:checked::before{
+.check:checked::before {
     background-color: #b61c80;
+}
+
+/* Estilos Responsivos para móviles */
+@media (max-width: 768px) {
+    .background-image {
+        display: none;
+    }
+
+    nav {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .bt-follow {
+        top: 7.5%;
+        right: 0;
+        margin-right: 10px;
+    }
+
+    .profile-picture {
+        display: none;
+        position: static;
+        width: 100px;
+        height: 100px;
+    }
+
+    .head-body {
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .head-body .bt-follow {
+        margin-top: 10px;
+    }
+
+    .head-body .myname h1 {
+        font-size: 24px;
+    }
+
+    .head-body .myname p {
+        font-size: 16px;
+    }
+
+    .head-body .phrase {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .myinfo {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .myinfo > div {
+        margin: 5px 0;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .op-page ul {
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .op-page li {
+        margin: 5px 0;
+    }
+
+    .op-content {
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    .op-content p {
+        word-break: break-word;
+        margin: 0; /* Asegúrate de que no haya margen que cause el comportamiento vertical */
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
 }
