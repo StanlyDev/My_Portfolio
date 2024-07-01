@@ -285,16 +285,21 @@ footer {
 
   .carousel {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0;
 }
 
 .carousel img {
-    scroll-snap-align: start;
     width: 100%;
-    flex: 0 0 auto;
-    margin-right: 1rem;
-    border-radius: 5px;
+    scroll-snap-align: start;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
 }
   

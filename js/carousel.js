@@ -18,3 +18,24 @@
          });
      }
  });
+
+ let scrollInterval = 2000;
+
+ function startCarousel() {
+     let carousel = document.querySelector('.carousel');
+     let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
+
+     let position = 0;
+     setInterval(() => {
+         position += carousel.clientWidth;
+         if (position > scrollWidth) {
+             position = 0;
+         }
+         carousel.scrollTo({
+             left: position,
+             behavior: 'smooth'
+         });
+     }, scrollInterval);
+ }
+
+ document.addEventListener('DOMContentLoaded', startCarousel);
