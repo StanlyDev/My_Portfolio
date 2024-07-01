@@ -13,6 +13,10 @@ body {
     background: #121212;
 }
 
+body::-webkit-scrollbar{
+  display: none;
+}
+
 header {
     background: #1f1f1f;
     color: #e0e0e0;
@@ -29,6 +33,7 @@ header {
 .nav {
     flex: 1;
     text-align: right;
+    padding-right: 10px;
 }
 
 .nav ul {
@@ -300,7 +305,12 @@ footer {
 }
 
 .carousel::-webkit-scrollbar {
-    display: none;
+    background-color: #1f1f1f;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background-color: #b31d7e;
+  border-radius: 5px;
 }
 
 .modal {
