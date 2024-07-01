@@ -39,3 +39,20 @@
  }
 
  document.addEventListener('DOMContentLoaded', startCarousel);
+
+     // Función para abrir el modal con la imagen clicada
+    function openModal(imgElement) {
+        // Obtener el modal y la imagen dentro del modal
+        const modal = document.getElementById('myModal');
+        const modalImg = document.getElementById('modalImg');
+
+        // Asignar la imagen clicada al modal
+        modal.style.display = 'block';
+        modalImg.src = imgElement.src;
+    }
+
+    // Función para cerrar el modal
+    function closeModal() {
+        const modal = document.getElementById('myModal');
+        modal.style.display = 'none';
+    }

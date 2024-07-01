@@ -71,12 +71,16 @@
                     </ul>
                 </div>
                 <div class="carousel">
-                    <img src="src/img/carousel/project_1/img1.jpg" alt="Proyecto 1 Imagen 1">
-                    <img src="src/img/carousel/project_1/img2.jpg" alt="Proyecto 1 Imagen 2">
-                    <img src="src/img/carousel/project_1/img3.jpg" alt="Proyecto 1 Imagen 3">
-                    <img src="src/img/carousel/project_1/img4.jpg" alt="Proyecto 1 Imagen 4">
-                    <img src="src/img/carousel/project_1/img5.jpg" alt="Proyecto 1 Imagen 5">
-                    <img src="src/img/carousel/project_1/img6.jpg" alt="Proyecto 1 Imagen 6">
+                    <img src="src/img/carousel/project_1/img1.jpg" alt="Proyecto 1 Imagen 1" onclick="openModal(this)">
+                    <img src="src/img/carousel/project_1/img2.jpg" alt="Proyecto 1 Imagen 2" onclick="openModal(this)">
+                    <img src="src/img/carousel/project_1/img3.jpg" alt="Proyecto 1 Imagen 3" onclick="openModal(this)">
+                    <img src="src/img/carousel/project_1/img4.jpg" alt="Proyecto 1 Imagen 4" onclick="openModal(this)">
+                    <img src="src/img/carousel/project_1/img5.jpg" alt="Proyecto 1 Imagen 5" onclick="openModal(this)">
+                    <img src="src/img/carousel/project_1/img6.jpg" alt="Proyecto 1 Imagen 6" onclick="openModal(this)">
+                </div>
+                <div id="myModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="modalImg">
                 </div>
                 Estas siendo las implementaciones generales, las tecnologias utilizadas fueron:
                 <div class="list">
@@ -128,5 +132,9 @@
     <footer>
         <p>&copy; 2024 StanlyDev</p>
     </footer>
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
 </body>
 </html>
