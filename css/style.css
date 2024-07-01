@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -26,31 +26,39 @@ header {
     align-items: center;
 }
 
-nav {
+.nav {
     flex: 1;
-    text-align: center;
+    text-align: right;
 }
 
-nav ul {
+.nav ul {
     list-style: none;
     display: inline-flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
-nav ul li {
-    margin: 0 5rem;
+.nav ul li {
+    margin: 0 1rem;
 }
 
-nav ul li a {
+.nav ul li a {
     color: #e0e0e0;
     text-decoration: none;
     font-weight: bold;
 }
 
+.list{
+    padding-left: 50px;
+}
+
+.list li{
+    left: 0;
+}
+
 #hero {
     background: #333;
     color: #e0e0e0;
-    text-align: center;
+    text-align: justify;
 }
 
 section {
@@ -61,7 +69,11 @@ section {
 h2 {
     font-size: 2rem;
     margin-bottom: 0rem;
-    color: #b31d7e; /* Color de acento */
+    color: #b31d7e;
+}
+
+#hero {
+    margin-top: 80px;
 }
 
 .project {
@@ -69,6 +81,21 @@ h2 {
     background: #1f1f1f;
     padding: 1rem;
     border-radius: 5px;
+    width: 900px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.project p{
+    margin: 0 auto;
+    text-align: justify;
+    width: 100%;
+}
+
+.about p{
+    margin: 0 auto;
+    text-align: justify;
+    width: 700px;
 }
 
 footer {
@@ -86,15 +113,35 @@ footer {
     }
 
     nav {
-        text-align: center;
+        text-align: right;
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     nav ul li {
-        margin: 0.5rem 0;
+        margin: 0 1rem;
+    }
+
+    #hero {
+        margin-top: 100px;
+    }
+
+    .project {
+        width: 100%;
+    }
+
+    .project p{
+        margin: 0 auto;
+        text-align: justify;
+        width: 100%;
+    }
+    
+    .about p{
+        margin: 0 auto;
+        text-align: justify;
+        width: 350px;
     }
 }
 
@@ -235,4 +282,19 @@ footer {
   .action:hover span {
     transform: translateX(4px);
   }
+
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel img {
+    scroll-snap-align: start;
+    width: 100%;
+    flex: 0 0 auto;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
   

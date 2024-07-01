@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logo">
             <img src="/img/CatBanner.png" alt="Logo">
         </div>
-        <nav>
+        <nav class="nav">
             <ul>
                 <li><a href="#about">Sobre Mí</a></li>
                 <li><a href="#projects">Proyectos</a></li>
@@ -24,19 +27,15 @@
             <div class="card">
                 <div class="image"><img src="/img/" alt=""></div>
                  <div class="content">
-                   <a href="#">
-                     <span class="title">
-                       Hello, my name is Brandon Ventura
+                     <span class="title" style="font-size: 1.8rem;">
+                        Brandon Ventura
                      </span>
-                   </a>
-               
                    <p class="desc">
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                     dolores, possimus pariatur animi temporibus nesciunt praesentium 
+                    Desarrollador Front-end 💻
                    </p>
-               
-                   <a class="action" href="#">
-                     Find out more
+                   <p class="desc">"Lo importante no es saber... sino tener el número de teléfono de la persona que conoces." 📎</p>
+                   <a class="action" href="#about">
+                     More
                      <span aria-hidden="true">
                        →
                      </span>
@@ -45,24 +44,32 @@
                </div>
         </div>
     </section>
-
-    <section id="about">
+    <section id="about" class="about">
         <h2>Sobre Mí</h2>
-        <p>Desarrollador web junior con experiencia en HTML, CSS, JavaScript y frameworks modernos.</p>
+            <p>Soy Brandon, mis amigos me llaman "Stan" o "Stanly" ya que es mi segundo nombre. Soy Desarrollador Web (Front-End). 🖥️</p><br>
+            <p>Actualmente soy desarrollador junior con conocimientos de HTML, CSS y JavaScript, me encuentro practicando casi a diario y desarrollando aplicaciones web con enfoques de negocio para gestión y logística, así como sistemas de inventario.
+                con generación de informes. En relación al desarrollo de aplicaciones que he realizado, realizo trabajos de Front-End y Back-End.</p><br>
+            <p>También creo servidores web y servidores de bases de datos, la mayoría de estos los hago usando VMware ESXi para crear máquinas virtuales que funcionan para hosting, esto usando APACHE, mayormente usando Linux Ubuntu Server o cualquier otra variante de Linux o OS.
+            para hosting o virtualización.</p>              
     </section>
-
     <section id="projects">
         <h2>Proyectos</h2>
         <div class="project">
-            <h3>Proyecto 1</h3>
-            <p>Descripción del proyecto 1.</p>
-        </div>
+            <h3>GBM Medios</h3>
+            <p>GBM Medios, es una proyecto desarrollado para la logistica del inventariado de medios de cintas del Data Center de GBM Honduras
+                esta ofrece:
+                <div class="list">
+                    <ul>
+                        <li>Gestion y creacion de usuarios</li>
+                    </ul>
+                </div>
+            </p>
+        </div><br>
         <div class="project">
             <h3>Proyecto 2</h3>
             <p>Descripción del proyecto 2.</p>
         </div>
     </section>
-
     <section id="contact" style="margin-top: -40px;">
         <h2>Contacto</h2>
         <div class="social-buttons" style="margin-bottom: 10px;">
@@ -92,7 +99,6 @@
             </a>
           </div>
     </section>
-
     <footer>
         <p>&copy; 2024 StanlyDev</p>
     </footer>
