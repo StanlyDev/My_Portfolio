@@ -43,13 +43,23 @@ header {
 }
 
 .nav ul li {
-    margin: 0 1rem;
+  margin: 0 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav ul li:hover {
+  transform: translateY(-3px);
 }
 
 .nav ul li a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-weight: bold;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+  color: #b31d7e;
 }
 
 .list{
