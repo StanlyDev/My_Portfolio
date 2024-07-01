@@ -20,7 +20,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000; /* Ajusta este valor según sea necesario */
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,7 +38,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0 5rem;
 }
 
 nav ul li a {
