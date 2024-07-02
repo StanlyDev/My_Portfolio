@@ -236,7 +236,6 @@ footer {
 
 .card {
   margin: 0 auto;
-  max-width: 700px;
   border-radius: 0.5rem;
   background-color: #121212;
   border: 1px solid transparent;
@@ -252,7 +251,7 @@ footer {
 
 .image {
   object-fit: cover;
-  width: 100%;
+  width: 700px;
   height: 150px;
   background-color: rgb(239, 205, 255);
 }
