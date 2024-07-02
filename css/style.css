@@ -257,8 +257,9 @@ footer {
   object-fit: cover;
   width: 700px;
   height: 150px;
-  background-color: rgb(239, 205, 255);
+  background-color: #b31d7e;
   position: absolute;
+  border-radius: 1rem;
 }
 
 .my img{
