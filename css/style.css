@@ -122,7 +122,7 @@ footer {
   body{
     width: 350px;
   }  
-
+  
   .logo {
       margin-left: 0.5rem;
   }
@@ -254,6 +254,16 @@ footer {
   width: 700px;
   height: 150px;
   background-color: rgb(239, 205, 255);
+  position: absolute;
+}
+
+.my img{
+  margin-top: 2rem;
+  margin-left: 1rem;
+  border-radius: 5rem;
+  border: 2px solid;
+  position: relative;
+  height: 150px;
 }
 
 .title {
