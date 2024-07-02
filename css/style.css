@@ -119,6 +119,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .image{
+    width: 300px;
+  }
+
   body{
     width: 350px;
   }  
