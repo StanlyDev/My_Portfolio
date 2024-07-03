@@ -253,11 +253,10 @@ footer {
   padding-top: 1.1rem;
 }
 
-.image {
+#container3D canvas {
   object-fit: cover;
-  width: 700px;
-  height: 150px;
-  background-color: #b31d7e;
+  width: 700px !important;
+  height: 250px !important;
   position: absolute;
   border-radius: 1rem;
 }

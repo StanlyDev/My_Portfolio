@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cute Fox
+* source:	https://sketchfab.com/3d-models/cute-fox-fad88d036f764cceb3938549ca446c89
+* author:	eexy (https://sketchfab.com/eexy)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cute Fox" (https://sketchfab.com/3d-models/cute-fox-fad88d036f764cceb3938549ca446c89) by eexy (https://sketchfab.com/eexy) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

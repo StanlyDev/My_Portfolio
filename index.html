@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio</title>
-    <script defer src="js/carousel.js"></script>
     <link rel="shortcut icon" href="src/ico/Logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module" src="js/model3d.js"></script>
+        <script defer src="js/carousel.js"></script>
 </head>
 <body>
     <header>
@@ -31,7 +32,7 @@
     <section id="hero">
         <div class="hero-content">
             <div class="card">
-                <div class="image"><img src="/img/" alt=""></div>
+                <div id="container3D"><canvas></canvas></div>
                 <div class="my"><img src="src/img/logo/my.jpg" alt="" srcset=""></div>
                 <div class="content">
                     <span class="title" style="font-size: 1.8rem;"><b>Brandon Ventura</b></span>
