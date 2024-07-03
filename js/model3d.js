@@ -55,7 +55,7 @@ const container = document.getElementById("container3D");
 container.appendChild(renderer.domElement);
 
 camera.position.z = 400;
-camera.position.x = 400;
+camera.position.x = 300;
 camera.position.y = 0;
 
 const topLight = new THREE.DirectionalLight(0xffffff, 1);

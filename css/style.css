@@ -254,6 +254,7 @@ footer {
 }
 
 #container3D canvas {
+  margin-top: -20px;
   object-fit: cover;
   width: 700px !important;
   height: 250px !important;
