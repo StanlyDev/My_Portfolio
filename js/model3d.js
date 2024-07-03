@@ -31,7 +31,7 @@ loader.load(
 
     object = gltf.scene;
 
-    object.scale.set(80, 80, 80);
+    object.scale.set(40, 40, 40);
 
     initialRotationX = object.rotation.x;
     initialRotationY = object.rotation.y;
@@ -54,10 +54,12 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 const container = document.getElementById("container3D");
 container.appendChild(renderer.domElement);
 
-camera.position.z = 500;
+camera.position.z = 400;
+camera.position.x = 400;
+camera.position.y = 50;
 
 const topLight = new THREE.DirectionalLight(0xffffff, 1);
-topLight.position.set(50, 50, 50);
+topLight.position.set(500, 500, 500);
 topLight.castShadow = true;
 scene.add(topLight);
 

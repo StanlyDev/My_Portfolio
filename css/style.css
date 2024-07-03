@@ -261,6 +261,10 @@ footer {
   border-radius: 1rem;
 }
 
+.main{
+  position: relative;
+}
+
 .my img{
   margin-top: 2rem;
   margin-left: 1rem;
