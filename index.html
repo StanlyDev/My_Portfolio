@@ -66,13 +66,18 @@
                 </ul>
             </div>
             <div class="carousel">
-                <img src="src/img/carousel/project_1/img1.jpg" alt="Proyecto 1 Imagen 1" onclick="openModal(this)">
-                <img src="src/img/carousel/project_1/img2.jpg" alt="Proyecto 1 Imagen 2" onclick="openModal(this)">
-                <img src="src/img/carousel/project_1/img3.jpg" alt="Proyecto 1 Imagen 3" onclick="openModal(this)">
-                <img src="src/img/carousel/project_1/img4.jpg" alt="Proyecto 1 Imagen 4" onclick="openModal(this)">
-                <img src="src/img/carousel/project_1/img5.jpg" alt="Proyecto 1 Imagen 5" onclick="openModal(this)">
-                <img src="src/img/carousel/project_1/img6.jpg" alt="Proyecto 1 Imagen 6" onclick="openModal(this)">
-            </div>
+                <div class="carousel-inner">
+                    <video src="/src/video/GBMCT_PREVIEW.mp4" autoplay alt="Proyecto 1 Video 1" onclick="openModal(this)"></video>
+                    <img src="src/img/carousel/project_1/img1.jpg" alt="Proyecto 1 Imagen 1" onclick="openModal(this)">
+                    <img src="src/img/carousel/project_1/img2.jpg" alt="Proyecto 1 Imagen 2" onclick="openModal(this)">
+                    <img src="src/img/carousel/project_1/img3.jpg" alt="Proyecto 1 Imagen 3" onclick="openModal(this)">
+                    <img src="src/img/carousel/project_1/img4.jpg" alt="Proyecto 1 Imagen 4" onclick="openModal(this)">
+                    <img src="src/img/carousel/project_1/img5.jpg" alt="Proyecto 1 Imagen 5" onclick="openModal(this)">
+                    <img src="src/img/carousel/project_1/img6.jpg" alt="Proyecto 1 Imagen 6" onclick="openModal(this)">
+                </div>
+                <a class="prev" onclick="moveCarousel(-1)">&#10094;</a>
+                <a class="next" onclick="moveCarousel(1)">&#10095;</a>
+            </div>            
             <p>Estas son las implementaciones generales, las tecnologías utilizadas fueron:</p>
             <div class="list">
                 <ul>
@@ -140,8 +145,9 @@
     </section>
     <div id="myModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImg">
-    </div>
+        <img class="modal-content" id="modalImg" style="display: none;">
+        <video class="modal-content" id="modalVideo" style="display: none;" controls></video>
+    </div>      
     <footer>
         <p>&copy; 2024 StanlyDev</p>
     </footer>
