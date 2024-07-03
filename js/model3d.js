@@ -56,7 +56,7 @@ container.appendChild(renderer.domElement);
 
 camera.position.z = 400;
 camera.position.x = 400;
-camera.position.y = 50;
+camera.position.y = 0;
 
 const topLight = new THREE.DirectionalLight(0xffffff, 1);
 topLight.position.set(500, 500, 500);
