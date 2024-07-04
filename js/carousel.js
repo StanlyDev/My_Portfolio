@@ -24,13 +24,14 @@ function closeModal() {
     modal.style.display = 'none';
     modalVideo.pause();
 }
-    
-let currentIndex = 0;
 
-function moveCarousel(direction) {
-    const carouselInner = document.querySelector('.carousel-inner');
-    const items = document.querySelectorAll('.carousel-inner img, .carousel-inner video');
+function moveCarousel(direction, carouselId) {
+    const carousel = document.getElementById(carouselId);
+    const carouselInner = carousel.querySelector('.carousel-inner');
+    const items = carousel.querySelectorAll('.carousel-inner img, .carousel-inner video');
     const totalItems = items.length;
+
+    let currentIndex = parseInt(carousel.getAttribute('data-current-index')) || 0;
 
     currentIndex += direction;
 
@@ -39,6 +40,8 @@ function moveCarousel(direction) {
     } else if (currentIndex >= totalItems) {
         currentIndex = 0;
     }
+
+    carousel.setAttribute('data-current-index', currentIndex);
 
     const transformValue = -currentIndex * 100;
     carouselInner.style.transform = `translateX(${transformValue}%)`;
