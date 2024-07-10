@@ -6,11 +6,13 @@
 }
 
 body {
-  width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-  color: #e0e0e0;
-  background: #121212;
+  background-color: #121212;
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 body::-webkit-scrollbar{
@@ -125,6 +127,7 @@ footer {
 
   body{
     width: 350px;
+    margin: 0 auto;
   }  
   
   .logo {
@@ -372,4 +375,13 @@ footer {
 @keyframes zoom {
   from {transform: scale(0)}
   to {transform: scale(1)}
+}
+
+article {
+  max-width: 700px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto;
 }
