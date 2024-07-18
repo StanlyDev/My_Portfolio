@@ -17,14 +17,6 @@ function openModal(element) {
     }
 }
 
-function closeModal() {
-    const modal = document.getElementById('myModal');
-    const modalVideo = document.getElementById('modalVideo');
-
-    modal.style.display = 'none';
-    modalVideo.pause();
-}
-
 function moveCarousel(direction, carouselId) {
     const carousel = document.getElementById(carouselId);
     const carouselInner = carousel.querySelector('.carousel-inner');
@@ -46,3 +38,31 @@ function moveCarousel(direction, carouselId) {
     const transformValue = -currentIndex * 100;
     carouselInner.style.transform = `translateX(${transformValue}%)`;
 }
+
+// Inicializa el carrusel con el índice 0
+document.querySelectorAll('.carousel').forEach(carousel => {
+    carousel.setAttribute('data-current-index', 0);
+});
+
+// Cerrar modal con tecla "Esc"
+// Definición de la función closeModal
+function closeModal() {
+    const modal = document.getElementById('myModal');
+    const modalVideo = document.getElementById('modalVideo');
+
+    modal.style.display = 'none';
+    modalVideo.pause();
+}
+
+// Evento para cerrar el modal con tecla "Esc"
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Inicialización del carrusel con índice 0 (si aplica)
+document.querySelectorAll('.carousel').forEach(carousel => {
+    carousel.setAttribute('data-current-index', 0);
+});
+

@@ -1,158 +1,185 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StanlyDev</title>
+    <link rel="stylesheet" href="src/css/style.css">
     <link rel="shortcut icon" href="src/ico/Logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
+    <script defer src="src/js/carousel.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script type="module" src="js/model3d.js"></script>
-    <script defer src="js/carousel.js"></script>
+    <title>StanlyDev</title>
 </head>
 <body>
-    <article>
-      <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="src/img/logo/CatBanner.png" alt="Logo">
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#about">Sobre Mí</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                    <li><a href="doc/CV-Brandon-Ventura.pdf" target="_blank">CV</a></li>
-                </ul>
-            </nav>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="src/img/logo/CatBanner.png" alt="StanlyDev Logo">
         </div>
-    </header>    
-    <section id="hero">
-        <div class="hero-content">
-            <div class="card">
-                <div id="container3D"><canvas></canvas></div>
-                <div class="main">
-                    <div class="my"><img src="src/img/logo/my.jpg" alt="" srcset=""></div>
-                <div class="content">
-                    <span class="title" style="font-size: 1.8rem;"><b>Brandon Ventura</b></span>
-                    <p class="desc">Desarrollador Front-end 💻</p>
-                    <p class="desc">"Lo importante no es saber... sino tener el número de teléfono de la persona que sabe" 📎</p>
+        <ul class="nav-links">
+            <li><a href="#AboutMe">Sobre Mi</a></li>
+            <li><a href="#Projects">Proyectos</a></li>
+            <li><a href="#contact">Contacto</a></li>
+            <li><a href="src/doc/CV-Brandon-Ventura.pdf" target="_blank">CV</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="main">
+            <div id="c2" class="card">
+               <div class="card-info">
+                   <div class="contact-title">Contact</div>
+                       <div class="card-contact">
+                           <li class="icon-contact">
+                               <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M280 0C408.1 0 512 103.9 512 232c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-101.6-82.4-184-184-184c-13.3 0-24-10.7-24-24s10.7-24 24-24zm8 192a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm-32-72c0-13.3 10.7-24 24-24c75.1 0 136 60.9 136 136c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-48.6-39.4-88-88-88c-13.3 0-24-10.7-24-24zM117.5 1.4c19.4-5.3 39.7 4.6 47.4 23.2l40 96c6.8 16.3 2.1 35.2-11.6 46.3L144 207.3c33.3 70.4 90.3 127.4 160.7 160.7L345 318.7c11.2-13.7 30-18.4 46.3-11.6l96 40c18.6 7.7 28.5 28 23.2 47.4l-24 88C481.8 499.9 466 512 448 512C200.6 512 0 311.4 0 64C0 46 12.1 30.2 29.5 25.4l88-24z"></path>
+                               </svg>
+                                    Tel:(+504) 9922-3861
+                           </li><br>
+                           <li class="icon-contact">
+                               <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"></path>
+                               </svg>
+                                   Email: stanvsdev@gmail.com
+                           </li>            
+                        </div>
+                    </div>
                 </div>
-            </div>
+           <div id="c3" class="card">
+               <div class="card-info">
+                   <li class="address-icon">
+                       <svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"></path>
+                       </svg>
+                   </li>
+                   <li class="address-title">Address:</li>
+                   <li class="address">Villanueva Cortes, Honduras.</li>
+             </div>
+           </div>
+           <div id="c1" class="card">
+                <div class="card-info">
+                   <div class="card-avatar">
+                    <img src="src/img/logo/my.jpg" alt="">
+                   </div>
+                   <div class="card-title">Brandon Ventura</div>
+                   <div class="card-subtitle">StanlyDev Front-End Developer</div>
+                   <div class="card-social">
+                   <li id="cs1" class="card-social-icon">
+                       <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                        </svg>
+                        Twitter
+                       </li>
+                   <li id="cs2" class="card-social-icon">
+                        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
+                       </svg>
+                       LinkedIn
+                   </li>
+                   <li id="cs3" class="card-social-icon">
+                       <svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+                       </svg>
+                       GitHub
+                   </li>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="body-container">
+        <div class="body-cont">
+            <section class="AboutMe" id="AboutMe">
+                <h1>Sobre Mi</h1><br>
+                <p>
+                    Soy Brandon, mis amigos me llaman "Stan" o "Stanly" (Mi segundo nombre). Soy Desarrollador Web (Front-End). 🖥️ <br><br>
+                    Actualmente soy desarrollador junior con conocimientos bastos en codificacion web y frameworks, me encuentro 
+                    practicando casi a diario y desarrollando aplicaciones web con enfoques de negocio para gestión y logística, 
+                    así como sistemas de inventario con generación de informes. En relación al desarrollo de aplicaciones que he realizado, 
+                    realizo trabajos de Front-End y Back-End. <br><br> También creo servidores web y servidores de bases de datos, la mayoría de estos 
+                    los hago usando VMware ESXi para crear máquinas virtuales que funcionan para hosting, esto usando NGINX o APACHE, mayormente 
+                    usando Linux Ubuntu Server o cualquier otra variante de Linux o OS para hosting o virtualización.
+                </p>
+            </section><br>
+            <section class="Projects" id="Projects">
+                <h1>Proyectos:</h1><br>
+                <div class="project1">
+                    <h3>1. GBM Medios (Enero 2024 - Actualmente)</h3>
+                    <p>GBM Medios es un proyecto desarrollado para la logística del inventariado de medios de cintas del Data Center de GBM Honduras. Este ofrece:</p>
+                    <div class="list">
+                        <ul>
+                            <li>Gestión y creación de usuarios (Roles: Root, Admin, Operator)</li>
+                            <li>Inventario (Filtrado de datos, agregar, modificar y eliminar inventariado)</li>
+                            <li>Generación de reportes (Inventario, Ingreso y retiro de medios en inventario)</li>
+                            <li>Accesos según el Rol de cada usuario</li>
+                            <li>Historial de acciones (Login, modificaciones del inventario realizadas por el usuario, ingreso y salida de medios)</li>
+                            <li>Servicio SMTP (Usado para solicitudes al momento de modificar o eliminar datos del inventario, medio de envío de códigos de verificación)</li>
+                            <li>Generación de Token (Tokens aleatorios temporales para login y modificación de inventario que se envían vía correo SMTP)</li>
+                        </ul>
+                    </div>
+                    <div class="carousel" id="carousel1">
+                        <div class="carousel-inner">
+                            <video src="src/video/GBMCT_PREVIEW.mp4" autoplay loop alt="Proyecto 1 Video 1" onclick="openModal(this)"></video>
+                            <img src="src/img/carousel/project_1/img1.jpg" alt="Proyecto 1 Imagen 1" onclick="openModal(this)">
+                            <img src="src/img/carousel/project_1/img2.jpg" alt="Proyecto 1 Imagen 2" onclick="openModal(this)">
+                            <img src="src/img/carousel/project_1/img3.jpg" alt="Proyecto 1 Imagen 3" onclick="openModal(this)">
+                            <img src="src/img/carousel/project_1/img4.jpg" alt="Proyecto 1 Imagen 4" onclick="openModal(this)">
+                            <img src="src/img/carousel/project_1/img5.jpg" alt="Proyecto 1 Imagen 5" onclick="openModal(this)">
+                            <img src="src/img/carousel/project_1/img6.jpg" alt="Proyecto 1 Imagen 6" onclick="openModal(this)">
+                        </div>
+                        <a class="prev" onclick="moveCarousel(-1, 'carousel1')">&#10094;</a>
+                        <a class="next" onclick="moveCarousel(1, 'carousel1')">&#10095;</a>
+                    </div>            
+                    <p>Estas son las implementaciones generales, las tecnologías utilizadas fueron:</p>
+                    <div class="list">
+                        <ul>
+                            <li><b>HTML, PHP, CSS y JavaScript en general</b></li>
+                            <li><b>CSS:</b> Recursos de Bootstrap-icon, Lordicon</li>
+                            <li><b>Base de Datos:</b> SQL Server y como gestor PHPMyAdmin dentro del mismo servidor</li>
+                            <li><b>Framework:</b> NodeJS, Express.js</li>
+                            <li><b>Servidor:</b> Ubuntu Server con Nginx</li>
+                            <li><b>SMTP:</b> Postfix</li>
+                        </ul>
+                    </div>
+                </div><br>
+                <div class="project2">
+                    <h3>2. PixelHub (Julio 2024 - Actualmente)</h3>
+                    <p>PixelHub es una plataforma web la cual ofrece un catalogo de juegos PixelArt, al igual que un catagolo de Wallpaper los cuales se 
+                        descargan de manera interna, este sistema se desarrollo e implemento:</p>
+                    <div class="list">
+                        <ul>
+                            <li>Barra de navegacion y input de busqueda con filtrado en tiempo real</li>
+                            <li>Catalago y diseño responsive</li>
+                            <li>Repositorio de juegos descargables y Wallpaper</li>
+                            <li>Juegos HTML5</li>
+                            <li>Login y correo PHP</li>
+                            <li>Paginas personalizadas con informacion e img de cada juego</li>
+                            <li>Bootstrap</li>
+                        </ul>
+                    </div>
+                    <div class="carousel" id="carousel2">
+                        <div class="carousel-inner">
+                            <img src="src/img/carousel/project_2/img1.jpg" alt="Proyecto 2 Imagen 1" onclick="openModal(this)">
+                            <img src="src/img/carousel/project_2/img2.jpg" alt="Proyecto 2 Imagen 2" onclick="openModal(this)">
+                            <img src="src/img/carousel/project_2/img3.jpg" alt="Proyecto 2 Imagen 3" onclick="openModal(this)">
+                            <img src="src/img/carousel/project_2/img4.jpg" alt="Proyecto 2 Imagen 4" onclick="openModal(this)">
+                            <img src="src/img/carousel/project_2/img5.jpg" alt="Proyecto 2 Imagen 5" onclick="openModal(this)">
+                            <img src="src/img/carousel/project_2/img6.jpg" alt="Proyecto 2 Imagen 6" onclick="openModal(this)">
+                        </div>
+                        <a class="prev" onclick="moveCarousel(-1, 'carousel2')">&#10094;</a>
+                        <a class="next" onclick="moveCarousel(1, 'carousel2')">&#10095;</a>
+                    </div>
+                    <p>Como tal este es proyecto es meramente para divagar realizando practicas de diferentes metodos y tecnicas de Front-End y Back-End.</p>         
+                </div>
+            </section>
         </div>
-    </section>
-    <section id="about" class="about" style="margin-top: -10px;">
-        <span class="title" style="font-size: 1.8rem;"><b>Sobre Mí</b></span>
-        <p>Soy Brandon, mis amigos me llaman "Stan" o "Stanly" (Mi segundo nombre). Soy Desarrollador Web (Front-End). 🖥️</p><br>
-        <p>Actualmente soy desarrollador junior con conocimientos bastos en codificacion web y frameworks, me encuentro practicando casi a diario y desarrollando aplicaciones web con enfoques de negocio para gestión y logística, así como sistemas de inventario con generación de informes. En relación al desarrollo de aplicaciones que he realizado, realizo trabajos de Front-End y Back-End.</p><br>
-        <p>También creo servidores web y servidores de bases de datos, la mayoría de estos los hago usando VMware ESXi para crear máquinas virtuales que funcionan para hosting, esto usando NGINX o APACHE, mayormente usando Linux Ubuntu Server o cualquier otra variante de Linux o OS para hosting o virtualización.</p>              
-    </section>
-    <section id="projects" style="margin-top: -10px;">
-        <span class="title" style="font-size: 1.8rem;"><b>Proyectos</b></span>
-        <div class="project">
-            <h3>1. GBM Medios (Enero 2024 - Actualmente)</h3>
-            <p>GBM Medios es un proyecto desarrollado para la logística del inventariado de medios de cintas del Data Center de GBM Honduras. Este ofrece:</p>
-            <div class="list">
-                <ul>
-                    <li>Gestión y creación de usuarios (Roles: Root, Admin, Operator)</li>
-                    <li>Inventario (Filtrado de datos, agregar, modificar y eliminar inventariado)</li>
-                    <li>Generación de reportes (Inventario, Ingreso y retiro de medios en inventario)</li>
-                    <li>Accesos según el Rol de cada usuario</li>
-                    <li>Historial de acciones (Login, modificaciones del inventario realizadas por el usuario, ingreso y salida de medios)</li>
-                    <li>Servicio SMTP (Usado para solicitudes al momento de modificar o eliminar datos del inventario, medio de envío de códigos de verificación)</li>
-                    <li>Generación de Token (Tokens aleatorios temporales para login y modificación de inventario que se envían vía correo SMTP)</li>
-                </ul>
-            </div>
-            <div class="carousel" id="carousel1">
-                <div class="carousel-inner">
-                    <video src="src/video/GBMCT_PREVIEW.mp4" autoplay loop alt="Proyecto 1 Video 1" onclick="openModal(this)"></video>
-                    <img src="src/img/carousel/project_1/img1.jpg" alt="Proyecto 1 Imagen 1" onclick="openModal(this)">
-                    <img src="src/img/carousel/project_1/img2.jpg" alt="Proyecto 1 Imagen 2" onclick="openModal(this)">
-                    <img src="src/img/carousel/project_1/img3.jpg" alt="Proyecto 1 Imagen 3" onclick="openModal(this)">
-                    <img src="src/img/carousel/project_1/img4.jpg" alt="Proyecto 1 Imagen 4" onclick="openModal(this)">
-                    <img src="src/img/carousel/project_1/img5.jpg" alt="Proyecto 1 Imagen 5" onclick="openModal(this)">
-                    <img src="src/img/carousel/project_1/img6.jpg" alt="Proyecto 1 Imagen 6" onclick="openModal(this)">
-                </div>
-                <a class="prev" onclick="moveCarousel(-1, 'carousel1')">&#10094;</a>
-                <a class="next" onclick="moveCarousel(1, 'carousel1')">&#10095;</a>
-            </div>            
-            <p>Estas son las implementaciones generales, las tecnologías utilizadas fueron:</p>
-            <div class="list">
-                <ul>
-                    <li><b>HTML, PHP, CSS y JavaScript en general</b></li>
-                    <li><b>CSS:</b> Recursos de Bootstrap-icon, Lordicon</li>
-                    <li><b>Base de Datos:</b> SQL Server y como gestor PHPMyAdmin dentro del mismo servidor</li>
-                    <li><b>Framework:</b> NodeJS, Express.js</li>
-                    <li><b>Servidor:</b> Ubuntu Server con Nginx</li>
-                    <li><b>SMTP:</b> Postfix</li>
-                </ul>
-            </div>
-        </div><br>
-        <div class="project">
-            <h3>2. Pixelworld (Abril 2022 - Pausado)</h3>
-            <p>Pixelworld es mi primer proyecto el cual llevo realizando desde bachillerato, desarrollado para metodo de practica de diferentes formas de desarrolllo, sostenido mayormente con HTML, CSS y JavaScript,
-                dicho proyecto se enfoco en ser una tienda de video juegos de acceso libre (Free to play) y Wallpaper. Este al ser un proyecto de practica se exploro lo siguiente:</p>
-            <div class="list">
-                <ul>
-                    <li>Filtrado de busqueda con JS</li>
-                    <li>Web Desing CSS(Responsive Desing no disponible actualmente)</li>
-                    <li>JS+CSS</li>
-                </ul>
-            </div>
-            <div class="carousel" id="carousel2">
-                <div class="carousel-inner">
-                    <img src="src/img/carousel/project_2/img1.jpg" alt="Proyecto 2 Imagen 1" onclick="openModal(this)">
-                    <img src="src/img/carousel/project_2/img2.jpg" alt="Proyecto 2 Imagen 2" onclick="openModal(this)">
-                    <img src="src/img/carousel/project_2/img3.jpg" alt="Proyecto 2 Imagen 3" onclick="openModal(this)">
-                    <img src="src/img/carousel/project_2/img4.jpg" alt="Proyecto 2 Imagen 4" onclick="openModal(this)">
-                    <img src="src/img/carousel/project_2/img5.jpg" alt="Proyecto 2 Imagen 5" onclick="openModal(this)">
-                    <img src="src/img/carousel/project_2/img6.jpg" alt="Proyecto 2 Imagen 6" onclick="openModal(this)">
-                </div>
-                <a class="prev" onclick="moveCarousel(-1, 'carousel2')">&#10094;</a>
-                <a class="next" onclick="moveCarousel(1, 'carousel2')">&#10095;</a>
-            </div>
-        </div>
-    </section>
-    <section id="contact" style="margin-top: -20px;">
-        <span class="title" style="font-size: 1.8rem;"><b>Contacto</b></span>
-        <div class="social-buttons" style="margin-bottom: 10px;">
-            <a href="https://github.com/StanlyDev" target="_blank" class="social-button github">
-              <svg class="cf-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 0 19 19"><path d="M9.464 17.178a4.506 4.506 0 0 1-2.013.317 4.29 4.29 0 0 1-2.007-.317.746.746 0 0 1-.277-.587c0-.22-.008-.798-.012-1.567-2.564.557-3.105-1.236-3.105-1.236a2.44 2.44 0 0 0-1.024-1.348c-.836-.572.063-.56.063-.56a1.937 1.937 0 0 1 1.412.95 1.962 1.962 0 0 0 2.682.765 1.971 1.971 0 0 1 .586-1.233c-2.046-.232-4.198-1.023-4.198-4.554a3.566 3.566 0 0 1 .948-2.474 3.313 3.313 0 0 1 .091-2.438s.773-.248 2.534.945a8.727 8.727 0 0 1 4.615 0c1.76-1.193 2.532-.945 2.532-.945a3.31 3.31 0 0 1 .092 2.438 3.562 3.562 0 0 1 .947 2.474c0 3.54-2.155 4.32-4.208 4.548a2.195 2.195 0 0 1 .625 1.706c0 1.232-.011 2.227-.011 2.529a.694.694 0 0 1-.272.587z"></path></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/brandon-stanly-ventura-sanchez-bb5b37242" target="_blank" class="social-button linkedin">
-                  <svg viewBox="0 -2 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <g id="Icons" stroke="none" stroke-width="1">
-                      <g transform="translate(-702.000000, -265.000000)">
-                          <path d="M746,305 L736.2754,305 L736.2754,290.9384 C736.2754,287.257796 734.754233,284.74515 731.409219,284.74515 C728.850659,284.74515 727.427799,286.440738 726.765522,288.074854 C726.517168,288.661395 726.555974,289.478453 726.555974,290.295511 L726.555974,305 L716.921919,305 C716.921919,305 717.046096,280.091247 716.921919,277.827047 L726.555974,277.827047 L726.555974,282.091631 C727.125118,280.226996 730.203669,277.565794 735.116416,277.565794 C741.21143,277.565794 746,281.474355 746,289.890824 L746,305 L746,305 Z M707.17921,274.428187 L707.117121,274.428187 C704.0127,274.428187 702,272.350964 702,269.717936 C702,267.033681 704.072201,265 707.238711,265 C710.402634,265 712.348071,267.028559 712.41016,269.710252 C712.41016,272.34328 710.402634,274.428187 707.17921,274.428187 L707.17921,274.428187 L707.17921,274.428187 Z M703.109831,277.827047 L711.685795,277.827047 L711.685795,305 L703.109831,305 L703.109831,277.827047 L703.109831,277.827047 Z" id="LinkedIn">
-              </path>
-                      </g>
-                  </g>
-              </svg>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61550547239800" target="_blank" class="social-button facebook">
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 310 310" xml:space="preserve">
-          <g id="XMLID_834_">
-            <path id="XMLID_835_" d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064
-              c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996
-              V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545
-              C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703
-              c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z"></path>
-          </g>
-          </svg>
-            </a>
-          </div>
-    </section>
+       </div>
+    </main>
     <div id="myModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modalImg" style="display: none;">
         <video class="modal-content" id="modalVideo" style="display: none;" controls></video>
-    </div>      
+    </div>    
     <footer>
-        <p>&copy; 2024 StanlyDev</p>
+        &copy; 2024 StanlyDev.
     </footer>
-    </article>
 </body>
 </html>
