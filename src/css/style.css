@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
   scroll-behavior: smooth;
+  text-decoration: none;
 }
 
 body {
@@ -55,7 +56,19 @@ body::-webkit-scrollbar {
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+#contact-link{
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover{
+  color: #b31d7e;
+  font-weight: bold;
+}
+
+#contact-link:hover{
   color: #b31d7e;
   font-weight: bold;
 }
@@ -89,14 +102,6 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.card-avatar {
-  background: radial-gradient(#A8A6B6,#B3B1BF,#BDBBC7,#C5C4CE,#E2E2E7);
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  transition: transform .2s ease;
 }
 
 .card-avatar img {
@@ -154,7 +159,7 @@ main{
 
 .address-title {
   color: #fff;
-  font-size: 1.0em;
+  font-size: 1.5em;
   font-weight: 600;
   list-style: none;
 }
@@ -163,8 +168,6 @@ main{
   color: #fff;
   font-size: 0.8em;
   list-style: none;
-  padding-left: 20px;
-  ;
 }
 
 .contact-title {
@@ -184,6 +187,20 @@ main{
   list-style: none;
   display: flex;
   align-items: center;
+}
+
+.icon-contact button{
+  padding: .6rem;
+  border-radius: 10px;
+  margin: 0 auto;
+  background-color: #b31d7e;
+  border: none;
+  color: #fff;
+}
+
+.icon-contact button:hover{
+  background-color: #881b62;
+  border: 2px solid #fff;
 }
 
 .icon-contact svg {
@@ -224,16 +241,30 @@ main{
   transform: translateX(0px);
 }
 
+.main #c2 {
+  transform: translateX(0);
+  transition: transform 0.8s ease-in-out;
+}
+
+.main #c2.open {
+  transform: translateX(250px);
+}
+
+.main #c3 {
+  transform: translateX(0);
+  transition: transform 0.8s ease-in-out;
+}
+
+.main #c3.open {
+  transform: translateX(-250px);
+}
+
 .main:hover #c2 {
   transform: translateX(250px);
-  transition-duration: 0.8s;
-  transition-timing-function: ease-in-out;
 }
 
 .main:hover #c3 {
   transform: translateX(-250px);
-  transition-duration: 0.8s;
-  transition-timing-function: ease-in-out;
 }
 
 .body-container{
@@ -361,15 +392,26 @@ footer {
     max-width: 100%;
   }
 
-  .main:hover #c2 {
-    transform: translateY(100px);
-    transition-duration: 0.8s;
-    transition-timing-function: ease-in-out;
+  .main #c2, .main #c3 {
+    transform: translateY(0);
+    visibility: hidden;
   }
-  
-  .main:hover #c3 {
-    transform: translateY(350px);
-    transition-duration: 0.8s;
-    transition-timing-function: ease-in-out;
+
+  .main #c2.open {
+    width: 100%;
+    height: auto;
+    transform: translateY(8rem);
+    visibility: visible;
+  }
+
+  .main #c3.open {
+    width: 100%;
+    height: auto;
+    transform: translateY(20rem);
+    visibility: visible;
+  }
+
+  .address-icon {
+    display: none;
   }
 }

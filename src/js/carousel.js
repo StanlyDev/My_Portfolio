@@ -65,4 +65,3 @@ document.addEventListener('keydown', function(event) {
 document.querySelectorAll('.carousel').forEach(carousel => {
     carousel.setAttribute('data-current-index', 0);
 });
-
