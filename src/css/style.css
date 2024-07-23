@@ -61,6 +61,7 @@ body::-webkit-scrollbar {
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 .nav-links a:hover{
@@ -390,6 +391,7 @@ footer {
   .card {
     width: 100%;
     max-width: 100%;
+    margin: 0 auto;
   }
 
   .main #c2, .main #c3 {
