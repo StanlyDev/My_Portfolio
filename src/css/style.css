@@ -417,3 +417,49 @@ footer {
     display: none;
   }
 }
+
+.project-header{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #212121;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.button .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+  margin-left: .5rem;
+}
+
+.button svg path {
+  transition: 400ms;
+}
+
+.button:hover {
+  background-color: transparent;
+  transition: 400ms;
+}
+
+.button:hover .text {
+  color: #b31d7e;
+  transition: 400ms;
+}
+
+.button:hover svg path {
+  fill: #b31d7e;
+  transition: 400ms;
+}
