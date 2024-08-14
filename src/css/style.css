@@ -463,3 +463,61 @@ footer {
   fill: #b31d7e;
   transition: 400ms;
 }
+
+.card-skill {
+  width: 100%;
+  height: 250px;
+  background: #212121;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  color: #b31d7e;
+  border-radius: 10px;
+}
+.card__tags {
+  overflow: auto;
+  height: 80%;
+}
+.title {
+  font-weight: 900;
+  font-size: 1.7em;
+}
+
+.tag__name {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.1em;
+  background-color: #b31d7e;
+  padding: 6px 20px 9px;
+  border-radius: 70em;
+  margin: 8px 6px 8px 0;
+  margin-left: 0px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.tag__name::before,
+.tag__name::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #212121;
+}
+
+.tag__name::before {
+  left: 7px;
+}
+
+.tag__name::after {
+  right: 7px;
+}
+
+.tag__name:hover {
+  transform: scale(1.1);
+  background-color: #881b62;
+}
