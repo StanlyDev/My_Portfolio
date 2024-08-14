@@ -18,8 +18,13 @@ I also create web servers and database servers, most of these I do using VMware 
 |HTML|Bootstrap|VMware ESXi|
 |CSS|Node.js|Linux (Ubuntu Server and other variants)|
 |JavaScript|Express.js|PHPMyAdmin|
-|PHP|Nginx|SQLServer|
-|SQL |Postfix|Chart.js|
+|PHP|Nginx|SQL Server|
+|SQL|Postfix|Chart.js|
+|C#|Tailwind|Figma|
+|C++|.Net Framework|Git|
+|Java|JQuery|Lordicon|
+| |MySQL|UIverse|
+| |APIs|Windows Server|
 
 ## My project preview
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
