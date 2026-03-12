@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brandon Ventura — Portfolio</title>
+    <title>Brandon Ventura — Full Portfolio Layout</title>
     
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -74,9 +74,9 @@
             letter-spacing: -0.05em; 
         }
 
-        /* OUTLINE CORREGIDO */
+        /* OUTLINE */
         .outline { 
-            -webkit-text-fill-color: transparent; 
+            color: transparent; 
             -webkit-text-stroke: 2px currentColor; 
         }
 
@@ -108,6 +108,7 @@
             display: flex; height: 100%; width: max-content; padding: 0 var(--margin); align-items: center; gap: 5vw;
         }
 
+        /* NUEVO: INTRODUCCIÓN AL SLIDER */
         .horizontal-intro {
             width: 60vw;
             display: flex;
@@ -122,21 +123,6 @@
             line-height: 0.85;
             text-transform: uppercase;
             letter-spacing: -0.05em;
-        }
-
-        .email-arrow {
-          display: inline-block;
-          font-family: 'Inter', sans-serif;
-          font-weight: 400;
-          font-size: 0.7em; /* Se escala proporcionalmente al texto gigante */
-          -webkit-text-stroke: 0; /* Asegura que la flecha sea sólida, no hueca */
-          -webkit-text-fill-color: currentColor;
-          margin-left: 2vw;
-          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-        .email-link:hover .email-arrow {
-            transform: translate(15px, -15px); /* Animación magnética al hacer hover */
         }
 
         .project-card { 
@@ -202,7 +188,7 @@
                 <span>Currently: Fullstack JR Developer @ StanlyDev</span>
             </div>
             <div class="title-mask"><h1 class="h1-rev">Brandon</h1></div>
-            <div class="title-mask"><h1 class="h1-rev outline">Ventura</h1></div>
+            <div class="title-mask"><h1 class="h1-rev">Ventura</h1></div>
         </header>
 
         <section class="intro-section trigger-light">
@@ -420,10 +406,7 @@
             </div>
 
             <div class="footer-content hover-target">
-                <a href="mailto:brandonstanlyv@gmail.com" class="email-link">
-                    brandonstanlyv<br>
-                    <span class="outline">@gmail.com</span><span class="email-arrow">↗</span>
-                </a>
+                <a href="mailto:brandonstanlyv@gmail.com" class="email-link">brandonstanlyv<br><span class="outline">@gmail.com</span></a>
             </div>
             
             <div class="footer-grid">
@@ -433,11 +416,11 @@
                 </div>
                 <div>
                     <span style="color: var(--accent);">Email</span>
-                    <a href="mailto:brandonstanlyv@gmail.com" class="hover-target">brandonstanlyv@gmail.com</a>
+                    <a href="mailto:stansvdev@gmail.com" class="hover-target">stansvdev@gmail.com</a>
                 </div>
                 <div>
                     <span style="color: var(--accent);">Number Phone</span>
-                    <a href="#" class="hover-target">+504 9922-3861</a>
+                    <a href="#" class="hover-target">+504 99223861</a>
                 </div>
                 <div>
                     <span style="color: var(--accent);">LinkedIn</span>
