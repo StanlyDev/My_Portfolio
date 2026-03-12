@@ -61,24 +61,11 @@
         .hero-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; margin-bottom: 2vh; color: var(--accent); display: flex; gap: 2vw; }
         .status-dot { width: 8px; height: 8px; background-color: #22c55e; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
         
-        .title-mask { 
-            overflow: hidden; 
-            display: block; 
-            padding-bottom: 2vh; 
-        }
-        h1 { 
-            font-size: clamp(3rem, 12vw, 15rem); 
-            font-weight: 900; 
-            line-height: 0.85; 
-            text-transform: uppercase; 
-            letter-spacing: -0.05em; 
-        }
+        .title-mask { overflow: hidden; display: block; padding-bottom: 2vh; }
+        h1 { font-size: clamp(3.5rem, 12vw, 15rem); font-weight: 900; line-height: 0.85; text-transform: uppercase; letter-spacing: -0.05em; }
 
-        /* OUTLINE CORREGIDO */
-        .outline { 
-            -webkit-text-fill-color: transparent; 
-            -webkit-text-stroke: 2px currentColor; 
-        }
+        /* OUTLINE */
+        .outline { -webkit-text-fill-color: transparent; -webkit-text-stroke: 2px currentColor; }
 
         /* INTRO TEXT & FOCUS */
         .intro-section { padding: 15vh var(--margin); width: 100%; display: grid; grid-template-columns: 2fr 1fr; gap: 5vw; }
@@ -99,52 +86,28 @@
         .exp-content p { font-size: 1.1rem; line-height: 1.5; max-width: 800px; margin-bottom: 3vh; }
         .exp-content p strong { font-weight: 700; color: currentColor; }
 
-        /* PROYECTOS (HORIZONTAL SCROLL) */
+        /* PROYECTOS (HORIZONTAL SCROLL BASE) */
         .projects-section {
-            height: 100vh; width: 100vw; overflow: hidden; position: relative;
             background-color: var(--bg-dark); color: var(--text-dark);
         }
+        
+        /* En escritorio, esto será 100vh y hidden via JS/CSS. Lo configuramos estándar aquí */
+        .desktop-pin { height: 100vh; width: 100vw; overflow: hidden; position: relative; }
+        
         .horizontal-wrapper {
             display: flex; height: 100%; width: max-content; padding: 0 var(--margin); align-items: center; gap: 5vw;
         }
 
         .horizontal-intro {
-            width: 60vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            flex-shrink: 0;
-            padding-right: 5vw;
+            width: 60vw; display: flex; flex-direction: column; justify-content: center; flex-shrink: 0; padding-right: 5vw;
         }
         .horizontal-intro h2 {
-            font-size: clamp(4rem, 10vw, 12rem);
-            font-weight: 900;
-            line-height: 0.85;
-            text-transform: uppercase;
-            letter-spacing: -0.05em;
-        }
-
-        .email-arrow {
-          display: inline-block;
-          font-family: 'Inter', sans-serif;
-          font-weight: 400;
-          font-size: 0.7em; /* Se escala proporcionalmente al texto gigante */
-          -webkit-text-stroke: 0; /* Asegura que la flecha sea sólida, no hueca */
-          -webkit-text-fill-color: currentColor;
-          margin-left: 2vw;
-          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-        .email-link:hover .email-arrow {
-            transform: translate(15px, -15px); /* Animación magnética al hacer hover */
+            font-size: clamp(4rem, 10vw, 12rem); font-weight: 900; line-height: 0.85; text-transform: uppercase; letter-spacing: -0.05em;
         }
 
         .project-card { 
-            width: 75vw; 
-            height: 85vh; 
-            display: flex; flex-direction: column; justify-content: center; gap: 3vh;
-            border-left: 2px solid var(--text-dark); padding-left: 4vw;
-            flex-shrink: 0;
+            width: 75vw; height: 85vh; display: flex; flex-direction: column; justify-content: center; gap: 3vh;
+            border-left: 2px solid var(--text-dark); padding-left: 4vw; flex-shrink: 0;
         }
         .project-card .date { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #888; }
         .project-card h3 { font-size: clamp(1.5rem, 3vw, 3.5rem); line-height: 1.1; font-weight: 500; }
@@ -165,8 +128,16 @@
         .connect-intro p { font-size: clamp(1.2rem, 1.8vw, 2rem); color: var(--accent); max-width: 800px; line-height: 1.4; }
 
         .footer-content { display: flex; flex-direction: column; justify-content: center; flex-grow: 1; margin-bottom: 10vh; }
-        .footer-huge a.email-link { font-size: clamp(3rem, 7vw, 10vw); text-transform: uppercase; line-height: 0.9; font-weight: 900; text-decoration: none; color: currentColor; transition: opacity 0.3s; }
+        .footer-huge a.email-link { font-size: clamp(2rem, 7vw, 10vw); text-transform: uppercase; line-height: 0.9; font-weight: 900; text-decoration: none; color: currentColor; transition: opacity 0.3s; word-break: break-word; }
         .footer-huge a.email-link:hover { opacity: 0.5; }
+        
+        /* FLECHA DEL CORREO */
+        .email-arrow {
+            display: inline-block; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 0.7em; 
+            -webkit-text-stroke: 0; -webkit-text-fill-color: currentColor; margin-left: 2vw;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .email-link:hover .email-arrow { transform: translate(15px, -15px); }
         
         .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2vw; border-top: 1px solid currentColor; padding-top: 5vh; font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; }
         .footer-grid div { display: flex; flex-direction: column; gap: 1vh; }
@@ -175,13 +146,36 @@
         .reveal { opacity: 0; transform: translateY(50px); }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
 
-        /* RESPONSIVIDAD */
-        @media (max-width: 1024px) {
-            .intro-section { grid-template-columns: 1fr; }
-            .exp-row { grid-template-columns: 1fr; gap: 2vh; }
-            .horizontal-intro { width: 85vw; }
-            .project-card { width: 90vw; } 
+        /* =========================================
+           INGENIERÍA RESPONSIVA (MÓVILES Y TABLETS)
+           ========================================= */
+        @media (max-width: 768px) {
+            .hero-meta { flex-direction: column; gap: 1vh; }
+            .outline { -webkit-text-stroke: 1px currentColor; } /* Outline más fino en móvil */
+            
+            .intro-section { grid-template-columns: 1fr; padding: 10vh var(--margin); }
+            .exp-row { grid-template-columns: 1fr; gap: 2vh; padding: 4vh 0; }
+            .exp-content h3 { font-size: 1.5rem; }
+            
+            /* DESTRUIMOS EL SCROLL HORIZONTAL PARA MÓVILES */
+            .projects-section { padding: 10vh 0; }
+            .desktop-pin { height: auto !important; width: 100% !important; overflow: visible !important; }
+            .horizontal-wrapper { 
+                flex-direction: column; width: 100% !important; height: auto; 
+                gap: 8vh; align-items: flex-start; 
+            }
+            .horizontal-intro { width: 100%; padding: 0; margin-bottom: 2vh; }
+            .horizontal-intro h2 { font-size: 3.5rem; }
+            .project-card { 
+                width: 100%; height: auto; border-left: none; border-top: 2px solid var(--text-dark); 
+                padding-left: 0; padding-top: 3vh; gap: 2vh;
+            }
+            
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 4vh; }
+            .email-arrow { margin-left: 4vw; }
+        }
+        @media (max-width: 480px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 4vh; }
         }
     </style>
 </head>
@@ -293,122 +287,124 @@
         </section>
 
         <section class="projects-section trigger-dark hover-target">
-            <div class="horizontal-wrapper">
-                
-                <div class="horizontal-intro">
-                    <h2>Recent<br><span class="outline">Projects</span></h2>
-                </div>
-
-                <div class="project-card">
-                    <span class="date">Jan 2025</span>
-                    <h3>RRHH SYSTEM — Employee Attendance System</h3>
-                    <p>Desktop application built with <strong>Electron</strong>, <strong>Node.js</strong>, <strong>TailwindCSS</strong>, and <strong>SQL Server</strong> for real-time management and reporting of employee attendance. Includes dashboards, advanced filters, Excel export, and automatic updates for HR analytics.</p>
-                    <div class="tech-tags">
-                        <span>Electron</span><span>Node.js</span><span>TailwindCSS</span><span>SQL Server</span><span>SheetJS</span>
+            <div class="desktop-pin">
+                <div class="horizontal-wrapper">
+                    
+                    <div class="horizontal-intro">
+                        <h2>Recent<br><span class="outline">Projects</span></h2>
                     </div>
-                    <div class="read-more">Read more →</div>
-                </div>
 
-                <div class="project-card">
-                    <span class="date">Nov 2024</span>
-                    <h3>SharePointToSQLService — Data Sync Automation</h3>
-                    <p>Windows Service built with <strong>.NET 9.0</strong> that automates Excel-to-database synchronization between <strong>SharePoint</strong> and <strong>SQL Server</strong>. Uses <strong>Microsoft Graph API</strong> for secure file retrieval, <strong>ClosedXML</strong> for Excel parsing, and background processing with <strong>Worker Service</strong> to ensure real-time, traceable data updates.</p>
-                    <div class="tech-tags">
-                        <span>.NET 9.0</span><span>Worker Service</span><span>Microsoft Graph API</span><span>ClosedXML</span><span>SQL Server</span><span>Windows Service</span>
+                    <div class="project-card">
+                        <span class="date">Jan 2025</span>
+                        <h3>RRHH SYSTEM — Employee Attendance System</h3>
+                        <p>Desktop application built with <strong>Electron</strong>, <strong>Node.js</strong>, <strong>TailwindCSS</strong>, and <strong>SQL Server</strong> for real-time management and reporting of employee attendance. Includes dashboards, advanced filters, Excel export, and automatic updates for HR analytics.</p>
+                        <div class="tech-tags">
+                            <span>Electron</span><span>Node.js</span><span>TailwindCSS</span><span>SQL Server</span><span>SheetJS</span>
+                        </div>
+                        <div class="read-more">Read more →</div>
                     </div>
-                    <div class="read-more">Read more →</div>
-                </div>
 
-                <div class="project-card">
-                    <span class="date">Aug 2024</span>
-                    <h3>ClickUpSyncService — Task Data Integration</h3>
-                    <p>Windows Service built in <strong>C#</strong> under <strong>.NET Framework 4.0</strong> to synchronize and automate data exchange between <strong>ClickUp</strong> and internal systems. Handles API communication, JSON processing with <strong>Newtonsoft.Json</strong>, and log-based monitoring for reliability and background task execution.</p>
-                    <div class="tech-tags">
-                        <span>C#</span><span>.NET Framework 4.0</span><span>Windows Service</span><span>ClickUp API</span><span>Newtonsoft.Json</span><span>Automation</span>
+                    <div class="project-card">
+                        <span class="date">Nov 2024</span>
+                        <h3>SharePointToSQLService — Data Sync Automation</h3>
+                        <p>Windows Service built with <strong>.NET 9.0</strong> that automates Excel-to-database synchronization between <strong>SharePoint</strong> and <strong>SQL Server</strong>. Uses <strong>Microsoft Graph API</strong> for secure file retrieval, <strong>ClosedXML</strong> for Excel parsing, and background processing with <strong>Worker Service</strong> to ensure real-time, traceable data updates.</p>
+                        <div class="tech-tags">
+                            <span>.NET 9.0</span><span>Worker Service</span><span>Microsoft Graph API</span><span>ClosedXML</span><span>SQL Server</span><span>Windows Service</span>
+                        </div>
+                        <div class="read-more">Read more →</div>
                     </div>
-                    <div class="read-more">Read more →</div>
-                </div>
 
-                <div class="project-card">
-                    <span class="date">Oct 2024</span>
-                    <h3>MySQLtoSQLServerSync — Cross-Database Synchronization</h3>
-                    <p>Data synchronization application developed in <strong>C#</strong> with <strong>.NET 9.0</strong>, designed to keep <strong>MySQL</strong> and <strong>SQL Server</strong> databases aligned in real time. Implements robust data handling, compression, and hashing using <strong>Google.Protobuf</strong>, <strong>LZ4</strong>, and <strong>xxHash</strong> for efficient and secure transfers.</p>
-                    <div class="tech-tags">
-                        <span>C# / .NET 9.0</span><span>MySQL</span><span>SQL Server</span><span>Google.Protobuf</span><span>LZ4 / xxHash</span><span>BouncyCastle</span>
+                    <div class="project-card">
+                        <span class="date">Aug 2024</span>
+                        <h3>ClickUpSyncService — Task Data Integration</h3>
+                        <p>Windows Service built in <strong>C#</strong> under <strong>.NET Framework 4.0</strong> to synchronize and automate data exchange between <strong>ClickUp</strong> and internal systems. Handles API communication, JSON processing with <strong>Newtonsoft.Json</strong>, and log-based monitoring for reliability and background task execution.</p>
+                        <div class="tech-tags">
+                            <span>C#</span><span>.NET Framework 4.0</span><span>Windows Service</span><span>ClickUp API</span><span>Newtonsoft.Json</span><span>Automation</span>
+                        </div>
+                        <div class="read-more">Read more →</div>
                     </div>
-                    <div class="read-more">Read more →</div>
-                </div>
 
-                <div class="project-card">
-                    <span class="date">Jul 2024</span>
-                    <h3>ShowRoom Foton — Interactive Vehicle Explorer</h3>
-                    <p>Interactive web application for exploring <strong>Foton vehicle models</strong>. Developed with <strong>Vue.js</strong>, <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, featuring color selectors, model variants, technical specs, and multimedia galleries. Includes <strong>AJAX</strong> data loading, <strong>Animate.css</strong> transitions, and multilingual JSON support.</p>
-                    <div class="tech-tags">
-                        <span>Vue.js</span><span>JavaScript (ES6+)</span><span>HTML5 / CSS3</span><span>jQuery / AJAX</span><span>Animate.css</span><span>JSON / Multilanguage</span>
+                    <div class="project-card">
+                        <span class="date">Oct 2024</span>
+                        <h3>MySQLtoSQLServerSync — Cross-Database Synchronization</h3>
+                        <p>Data synchronization application developed in <strong>C#</strong> with <strong>.NET 9.0</strong>, designed to keep <strong>MySQL</strong> and <strong>SQL Server</strong> databases aligned in real time. Implements robust data handling, compression, and hashing using <strong>Google.Protobuf</strong>, <strong>LZ4</strong>, and <strong>xxHash</strong> for efficient and secure transfers.</p>
+                        <div class="tech-tags">
+                            <span>C# / .NET 9.0</span><span>MySQL</span><span>SQL Server</span><span>Google.Protobuf</span><span>LZ4 / xxHash</span><span>BouncyCastle</span>
+                        </div>
+                        <div class="read-more">Read more →</div>
                     </div>
-                    <div class="read-more">Read more →</div>
-                </div>
 
-                <div class="project-card">
-                    <span class="date">Jun 2024</span>
-                    <h3>PSSWD — Authentication & User Management</h3>
-                    <p>Full-stack system for <strong>user authentication and access control</strong> integrating <strong>Azure AD</strong>, <strong>Active Directory</strong>, and <strong>MySQL</strong>. Built with <strong>ASP.NET Core Web API</strong> and <strong>HTML5 / JavaScript</strong> frontend, it centralizes credential validation, synchronization, and secure user provisioning across corporate environments.</p>
-                    <div class="tech-tags">
-                        <span>ASP.NET Core</span><span>C# / .NET 6+</span><span>Azure AD</span><span>Active Directory</span><span>MySQL</span><span>HTML5 / JavaScript</span><span>Node.js Scripts</span>
+                    <div class="project-card">
+                        <span class="date">Jul 2024</span>
+                        <h3>ShowRoom Foton — Interactive Vehicle Explorer</h3>
+                        <p>Interactive web application for exploring <strong>Foton vehicle models</strong>. Developed with <strong>Vue.js</strong>, <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, featuring color selectors, model variants, technical specs, and multimedia galleries. Includes <strong>AJAX</strong> data loading, <strong>Animate.css</strong> transitions, and multilingual JSON support.</p>
+                        <div class="tech-tags">
+                            <span>Vue.js</span><span>JavaScript (ES6+)</span><span>HTML5 / CSS3</span><span>jQuery / AJAX</span><span>Animate.css</span><span>JSON / Multilanguage</span>
+                        </div>
+                        <div class="read-more">Read more →</div>
                     </div>
-                    <div class="read-more">Read more →</div>
-                </div>
 
-                <div class="project-card">
-                    <span class="date">May 2024</span>
-                    <h3>Convertexcel — Lead Conversion Tool</h3>
-                    <p>Desktop application built with <strong>Electron</strong> for converting <strong>Clientify</strong> lead exports into CRM-compatible Excel templates. Provides a simple interface for uploading, processing, and formatting files using <strong>Node.js</strong> scripts and predefined Excel templates.</p>
-                    <div class="tech-tags">
-                        <span>Electron</span><span>Node.js</span><span>HTML / JavaScript</span><span>Excel Templates</span><span>electron-builder</span>
+                    <div class="project-card">
+                        <span class="date">Jun 2024</span>
+                        <h3>PSSWD — Authentication & User Management</h3>
+                        <p>Full-stack system for <strong>user authentication and access control</strong> integrating <strong>Azure AD</strong>, <strong>Active Directory</strong>, and <strong>MySQL</strong>. Built with <strong>ASP.NET Core Web API</strong> and <strong>HTML5 / JavaScript</strong> frontend, it centralizes credential validation, synchronization, and secure user provisioning across corporate environments.</p>
+                        <div class="tech-tags">
+                            <span>ASP.NET Core</span><span>C# / .NET 6+</span><span>Azure AD</span><span>Active Directory</span><span>MySQL</span><span>HTML5 / JavaScript</span><span>Node.js Scripts</span>
+                        </div>
+                        <div class="read-more">Read more →</div>
                     </div>
-                    <div class="read-more">Read more →</div>
-                </div>
 
-                <div class="project-card">
-                    <span class="date">Mar 2024</span>
-                    <h3>Caution-lists — Compliance & Watchlist Management</h3>
-                    <p>Web system for managing and auditing corporate <strong>watchlists</strong> (PEP, blacklists, etc.). Supports DNI/RTN searches across multiple tables, <strong>email alerts</strong> on matches, record lifecycle (add, edit, hide/restore), <strong>Excel import/export</strong>, consultation history, and basic role-based access.</p>
-                    <div class="tech-tags">
-                        <span>PHP (mysqli)</span><span>MySQL / MariaDB</span><span>DataTables</span><span>Bootstrap</span><span>SweetAlert2</span><span>PhpSpreadsheet</span><span>PHPMailer</span><span>Nginx / Apache</span>
+                    <div class="project-card">
+                        <span class="date">May 2024</span>
+                        <h3>Convertexcel — Lead Conversion Tool</h3>
+                        <p>Desktop application built with <strong>Electron</strong> for converting <strong>Clientify</strong> lead exports into CRM-compatible Excel templates. Provides a simple interface for uploading, processing, and formatting files using <strong>Node.js</strong> scripts and predefined Excel templates.</p>
+                        <div class="tech-tags">
+                            <span>Electron</span><span>Node.js</span><span>HTML / JavaScript</span><span>Excel Templates</span><span>electron-builder</span>
+                        </div>
+                        <div class="read-more">Read more →</div>
                     </div>
-                    <div class="read-more">Read more →</div>
-                </div>
 
-                <div class="project-card">
-                    <span class="date">Feb 2024</span>
-                    <h3>GBM Medios — Tape Inventory Management System</h3>
-                    <p>Web platform developed for the <strong>GBM Honduras Data Center</strong> to manage and track <strong>tape media inventory</strong>. Includes user role management (Root, Admin, Operator), detailed reports, <strong>SMTP notifications</strong>, and action history with audit trails. Built with <strong>PHP</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, and <strong>SQL Server</strong> on an <strong>Ubuntu Server (Nginx)</strong>.</p>
-                    <div class="tech-tags">
-                        <span>PHP</span><span>Node.js / Express.js</span><span>SQL Server</span><span>HTML / CSS / JavaScript</span><span>Bootstrap-icons / Lordicon</span><span>Postfix SMTP</span><span>Ubuntu / Nginx</span>
+                    <div class="project-card">
+                        <span class="date">Mar 2024</span>
+                        <h3>Caution-lists — Compliance & Watchlist Management</h3>
+                        <p>Web system for managing and auditing corporate <strong>watchlists</strong> (PEP, blacklists, etc.). Supports DNI/RTN searches across multiple tables, <strong>email alerts</strong> on matches, record lifecycle (add, edit, hide/restore), <strong>Excel import/export</strong>, consultation history, and basic role-based access.</p>
+                        <div class="tech-tags">
+                            <span>PHP (mysqli)</span><span>MySQL / MariaDB</span><span>DataTables</span><span>Bootstrap</span><span>SweetAlert2</span><span>PhpSpreadsheet</span><span>PHPMailer</span><span>Nginx / Apache</span>
+                        </div>
+                        <div class="read-more">Read more →</div>
                     </div>
-                    <div class="read-more">Read more →</div>
-                </div>
 
-                <div class="project-card">
-                    <span class="date">Jan 2024</span>
-                    <h3>PixelHub — Interactive Gaming Website</h3>
-                    <p>Video game showcase website built with <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, designed to deliver a clean, responsive, and interactive user experience. Features include dynamic <strong>modals</strong>, grid-based game listings, and integration of <strong>Bootstrap</strong> and <strong>Chart.js</strong> for enhanced visuals and data presentation.</p>
-                    <div class="tech-tags">
-                        <span>HTML5 / CSS3</span><span>JavaScript (ES6)</span><span>Bootstrap</span><span>Chart.js</span><span>Google Fonts</span><span>Responsive Design</span>
+                    <div class="project-card">
+                        <span class="date">Feb 2024</span>
+                        <h3>GBM Medios — Tape Inventory Management System</h3>
+                        <p>Web platform developed for the <strong>GBM Honduras Data Center</strong> to manage and track <strong>tape media inventory</strong>. Includes user role management (Root, Admin, Operator), detailed reports, <strong>SMTP notifications</strong>, and action history with audit trails. Built with <strong>PHP</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, and <strong>SQL Server</strong> on an <strong>Ubuntu Server (Nginx)</strong>.</p>
+                        <div class="tech-tags">
+                            <span>PHP</span><span>Node.js / Express.js</span><span>SQL Server</span><span>HTML / CSS / JavaScript</span><span>Bootstrap-icons / Lordicon</span><span>Postfix SMTP</span><span>Ubuntu / Nginx</span>
+                        </div>
+                        <div class="read-more">Read more →</div>
                     </div>
-                    <div class="read-more">Read more →</div>
-                </div>
 
-                <div class="project-card">
-                    <span class="date">Dec 2023</span>
-                    <h3>This Music — Spotify & YouTube Search App</h3>
-                    <p>Web application that integrates the <strong>Spotify</strong> and <strong>YouTube APIs</strong> to search, display, and play songs or videos directly in the browser. Built with <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, it features animated search, responsive design, and dynamic result tables with playback support.</p>
-                    <div class="tech-tags">
-                        <span>HTML5 / CSS3</span><span>JavaScript (ES6)</span><span>Spotify API</span><span>YouTube API</span><span>Responsive Design</span><span>Google Fonts / Lordicon</span>
+                    <div class="project-card">
+                        <span class="date">Jan 2024</span>
+                        <h3>PixelHub — Interactive Gaming Website</h3>
+                        <p>Video game showcase website built with <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, designed to deliver a clean, responsive, and interactive user experience. Features include dynamic <strong>modals</strong>, grid-based game listings, and integration of <strong>Bootstrap</strong> and <strong>Chart.js</strong> for enhanced visuals and data presentation.</p>
+                        <div class="tech-tags">
+                            <span>HTML5 / CSS3</span><span>JavaScript (ES6)</span><span>Bootstrap</span><span>Chart.js</span><span>Google Fonts</span><span>Responsive Design</span>
+                        </div>
+                        <div class="read-more">Read more →</div>
                     </div>
-                    <div class="read-more">Read more →</div>
-                </div>
 
+                    <div class="project-card">
+                        <span class="date">Dec 2023</span>
+                        <h3>This Music — Spotify & YouTube Search App</h3>
+                        <p>Web application that integrates the <strong>Spotify</strong> and <strong>YouTube APIs</strong> to search, display, and play songs or videos directly in the browser. Built with <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, it features animated search, responsive design, and dynamic result tables with playback support.</p>
+                        <div class="tech-tags">
+                            <span>HTML5 / CSS3</span><span>JavaScript (ES6)</span><span>Spotify API</span><span>YouTube API</span><span>Responsive Design</span><span>Google Fonts / Lordicon</span>
+                        </div>
+                        <div class="read-more">Read more →</div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
@@ -433,11 +429,11 @@
                 </div>
                 <div>
                     <span style="color: var(--accent);">Email</span>
-                    <a href="mailto:brandonstanlyv@gmail.com" class="hover-target">brandonstanlyv@gmail.com</a>
+                    <a href="mailto:stansvdev@gmail.com" class="hover-target">stansvdev@gmail.com</a>
                 </div>
                 <div>
                     <span style="color: var(--accent);">Number Phone</span>
-                    <a href="#" class="hover-target">+504 9922-3861</a>
+                    <a href="#" class="hover-target">+504 99223861</a>
                 </div>
                 <div>
                     <span style="color: var(--accent);">LinkedIn</span>
@@ -448,7 +444,7 @@
     </main>
 
     <script>
-        // CURSOR LOGIC
+        // CURSOR LOGIC (Se desactiva visualmente el CSS del cursor custom en móviles por default gracias al pointer:coarse del navegador, pero lo mantenemos para escritorio)
         const cursor = document.querySelector('.custom-cursor');
         document.addEventListener('mousemove', e => {
             gsap.to(cursor, {x: e.clientX, y: e.clientY, duration: 0.1 });
@@ -475,22 +471,26 @@
             gsap.to(el, { y: 0, opacity: 1, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 85%" } });
         });
 
-        // HORIZONTAL SCROLL HIJACKING
-        const horizontalSection = document.querySelector('.projects-section');
-        const horizontalWrapper = document.querySelector('.horizontal-wrapper');
-        
-        let getScrollAmount = () => -(horizontalWrapper.scrollWidth - window.innerWidth);
-        
-        const tween = gsap.to(horizontalWrapper, { x: getScrollAmount, ease: "none" });
+        // MATCHMEDIA PARA SCROLL HORIZONTAL (SOLO SE EJECUTA EN ESCRITORIO)
+        let mm = gsap.matchMedia();
 
-        ScrollTrigger.create({
-            trigger: horizontalSection,
-            start: "top top",
-            end: () => `+=${horizontalWrapper.scrollWidth}`, 
-            pin: true,
-            animation: tween,
-            scrub: 1,
-            invalidateOnRefresh: true
+        mm.add("(min-width: 769px)", () => {
+            const horizontalSection = document.querySelector('.desktop-pin');
+            const horizontalWrapper = document.querySelector('.horizontal-wrapper');
+            
+            let getScrollAmount = () => -(horizontalWrapper.scrollWidth - window.innerWidth);
+            
+            const tween = gsap.to(horizontalWrapper, { x: getScrollAmount, ease: "none" });
+
+            ScrollTrigger.create({
+                trigger: horizontalSection,
+                start: "top top",
+                end: () => `+=${horizontalWrapper.scrollWidth}`, 
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true
+            });
         });
 
         // INVERSIÓN DINÁMICA DE TEMA
