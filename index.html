@@ -29,7 +29,6 @@
             transition: background-color 0.6s ease, color 0.6s ease;
         }
 
-        /* ESTÉTICA Y CURSOR */
         .grain {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none; z-index: 9998; opacity: 0.05;
@@ -48,26 +47,43 @@
         /* NAVEGACIÓN */
         nav {
             position: fixed; top: 0; width: 100%; padding: 30px var(--margin);
-            display: flex; justify-content: space-between; z-index: 100;
+            display: flex; justify-content: space-between; align-items: center; z-index: 100;
             font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase;
             mix-blend-mode: difference; color: #fff;
         }
+
+        /* LANG TOGGLE */
+        .lang-toggle {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.6);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 20px;
+            cursor: none;
+            letter-spacing: 0.08em;
+            transition: background 0.25s, color 0.25s, border-color 0.25s;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .lang-toggle:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+        .lang-toggle .lang-flag { font-size: 13px; }
 
         /* HERO TYPOGRAPHY */
         .hero { 
             height: 100vh; padding: 0 var(--margin); 
             display: flex; flex-direction: column; justify-content: center; 
         }
-        .hero-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; margin-bottom: 2vh; color: var(--accent); display: flex; gap: 2vw; }
-        .status-dot { width: 8px; height: 8px; background-color: #22c55e; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+        .hero-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; margin-bottom: 2vh; color: var(--accent); display: flex; gap: 2vw; align-items: center; }
+        .status-dot { width: 8px; height: 8px; background-color: #22c55e; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; flex-shrink: 0; }
         
         .title-mask { overflow: hidden; display: block; padding-bottom: 2vh; }
         h1 { font-size: clamp(3.5rem, 12vw, 15rem); font-weight: 900; line-height: 0.85; text-transform: uppercase; letter-spacing: -0.05em; }
 
-        /* OUTLINE */
         .outline { -webkit-text-fill-color: transparent; -webkit-text-stroke: 2px currentColor; }
 
-        /* INTRO TEXT & FOCUS */
+        /* INTRO */
         .intro-section { padding: 15vh var(--margin); width: 100%; display: grid; grid-template-columns: 2fr 1fr; gap: 5vw; }
         .intro-section p { font-size: clamp(1.2rem, 2vw, 2.5rem); line-height: 1.3; font-weight: 400; margin-bottom: 4vh; }
         .highlight { font-weight: 700; }
@@ -75,7 +91,7 @@
         .focus-block h2 { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; color: var(--accent); margin-bottom: 2vh; }
         .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2vh;}
         .tech-tags span { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 6px 14px; border: 1px solid currentColor; border-radius: 20px; transition: background-color 0.3s, color 0.3s; }
-        .tech-tags span:hover { background-color: currentColor; color: var(--bg-light); cursor: none; }
+        .tech-tags span:hover { background-color: var(--text-light); color: var(--bg-light); cursor: none; }
 
         /* EXPERIENCIA */
         .experience-section { padding: 10vh var(--margin); border-top: 1px solid currentColor; }
@@ -86,59 +102,32 @@
         .exp-content p { font-size: 1.1rem; line-height: 1.5; max-width: 800px; margin-bottom: 3vh; }
         .exp-content p strong { font-weight: 700; color: currentColor; }
 
-        /* PROYECTOS (HORIZONTAL SCROLL BASE) */
-        .projects-section {
-            background-color: var(--bg-dark); color: var(--text-dark);
-        }
-        
-        /* En escritorio, esto será 100vh y hidden via JS/CSS. Lo configuramos estándar aquí */
+        /* PROYECTOS */
+        .projects-section { background-color: var(--bg-dark); color: var(--text-dark); }
         .desktop-pin { height: 100vh; width: 100vw; overflow: hidden; position: relative; }
-        
-        .horizontal-wrapper {
-            display: flex; height: 100%; width: max-content; padding: 0 var(--margin); align-items: center; gap: 5vw;
-        }
-
-        .horizontal-intro {
-            width: 60vw; display: flex; flex-direction: column; justify-content: center; flex-shrink: 0; padding-right: 5vw;
-        }
-        .horizontal-intro h2 {
-            font-size: clamp(4rem, 10vw, 12rem); font-weight: 900; line-height: 0.85; text-transform: uppercase; letter-spacing: -0.05em;
-        }
-
-        .project-card { 
-            width: 75vw; height: 85vh; display: flex; flex-direction: column; justify-content: center; gap: 3vh;
-            border-left: 2px solid var(--text-dark); padding-left: 4vw; flex-shrink: 0;
-        }
+        .horizontal-wrapper { display: flex; height: 100%; width: max-content; padding: 0 var(--margin); align-items: center; gap: 5vw; }
+        .horizontal-intro { width: 60vw; display: flex; flex-direction: column; justify-content: center; flex-shrink: 0; padding-right: 5vw; }
+        .horizontal-intro h2 { font-size: clamp(4rem, 10vw, 12rem); font-weight: 900; line-height: 0.85; text-transform: uppercase; letter-spacing: -0.05em; }
+        .project-card { width: 75vw; height: 85vh; display: flex; flex-direction: column; justify-content: center; gap: 3vh; border-left: 2px solid var(--text-dark); padding-left: 4vw; flex-shrink: 0; }
         .project-card .date { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #888; }
         .project-card h3 { font-size: clamp(1.5rem, 3vw, 3.5rem); line-height: 1.1; font-weight: 500; }
         .project-card p { font-size: clamp(1rem, 1.3vw, 1.2rem); line-height: 1.5; color: #ccc; max-width: 95%; }
         .project-card p strong { color: #fff; font-weight: 700; }
-        
         .project-card .tech-tags span { border-color: var(--text-dark); color: var(--text-dark); }
         .project-card .tech-tags span:hover { background-color: var(--text-dark); color: var(--bg-dark); }
-
         .read-more { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; text-transform: uppercase; margin-top: 1vh; transition: opacity 0.3s; }
         .read-more:hover { opacity: 0.6; }
 
-        /* FOOTER & CONNECT */
+        /* FOOTER */
         .footer-huge { min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 15vh var(--margin) 10vh; }
-        
         .connect-intro { margin-bottom: 10vh; }
         .connect-intro h2 { font-size: clamp(2rem, 3.5vw, 4rem); font-weight: 300; margin-bottom: 3vh; }
         .connect-intro p { font-size: clamp(1.2rem, 1.8vw, 2rem); color: var(--accent); max-width: 800px; line-height: 1.4; }
-
         .footer-content { display: flex; flex-direction: column; justify-content: center; flex-grow: 1; margin-bottom: 10vh; }
         .footer-huge a.email-link { font-size: clamp(2rem, 7vw, 10vw); text-transform: uppercase; line-height: 0.9; font-weight: 900; text-decoration: none; color: currentColor; transition: opacity 0.3s; word-break: break-word; }
         .footer-huge a.email-link:hover { opacity: 0.5; }
-        
-        /* FLECHA DEL CORREO */
-        .email-arrow {
-            display: inline-block; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 0.7em; 
-            -webkit-text-stroke: 0; -webkit-text-fill-color: currentColor; margin-left: 2vw;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+        .email-arrow { display: inline-block; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 0.7em; -webkit-text-stroke: 0; -webkit-text-fill-color: currentColor; margin-left: 2vw; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
         .email-link:hover .email-arrow { transform: translate(15px, -15px); }
-        
         .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2vw; border-top: 1px solid currentColor; padding-top: 5vh; font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; }
         .footer-grid div { display: flex; flex-direction: column; gap: 1vh; }
         .footer-grid a { color: currentColor; text-decoration: none; }
@@ -146,31 +135,19 @@
         .reveal { opacity: 0; transform: translateY(50px); }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
 
-        /* =========================================
-           INGENIERÍA RESPONSIVA (MÓVILES Y TABLETS)
-           ========================================= */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero-meta { flex-direction: column; gap: 1vh; }
-            .outline { -webkit-text-stroke: 1px currentColor; } /* Outline más fino en móvil */
-            
+            .outline { -webkit-text-stroke: 1px currentColor; }
             .intro-section { grid-template-columns: 1fr; padding: 10vh var(--margin); }
             .exp-row { grid-template-columns: 1fr; gap: 2vh; padding: 4vh 0; }
             .exp-content h3 { font-size: 1.5rem; }
-            
-            /* DESTRUIMOS EL SCROLL HORIZONTAL PARA MÓVILES */
             .projects-section { padding: 10vh 0; }
             .desktop-pin { height: auto !important; width: 100% !important; overflow: visible !important; }
-            .horizontal-wrapper { 
-                flex-direction: column; width: 100% !important; height: auto; 
-                gap: 8vh; align-items: flex-start; 
-            }
+            .horizontal-wrapper { flex-direction: column; width: 100% !important; height: auto; gap: 8vh; align-items: flex-start; }
             .horizontal-intro { width: 100%; padding: 0; margin-bottom: 2vh; }
             .horizontal-intro h2 { font-size: 3.5rem; }
-            .project-card { 
-                width: 100%; height: auto; border-left: none; border-top: 2px solid var(--text-dark); 
-                padding-left: 0; padding-top: 3vh; gap: 2vh;
-            }
-            
+            .project-card { width: 100%; height: auto; border-left: none; border-top: 2px solid var(--text-dark); padding-left: 0; padding-top: 3vh; gap: 2vh; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 4vh; }
             .email-arrow { margin-left: 4vw; }
         }
@@ -185,15 +162,20 @@
     <div class="grain"></div>
 
     <nav>
-        <div class="hover-target">PORTFOLIO / 2026</div>
-        <div class="hover-target">Honduras</div>
+        <div class="hover-target" data-i18n="nav_portfolio">PORTFOLIO / 2026</div>
+        <div style="display:flex; align-items:center; gap: 20px;">
+            <div class="hover-target" data-i18n="nav_location">Honduras</div>
+            <button class="lang-toggle hover-target" id="langBtn" onclick="toggleLang()">
+                <span class="lang-flag">🇪🇸</span><span id="langLabel">ES</span>
+            </button>
+        </div>
     </nav>
 
     <main>
         <header class="hero">
             <div class="hero-meta reveal-up">
-                <span><div class="status-dot"></div> Available for work</span>
-                <span>Currently: Fullstack JR Developer @ StanlyDev</span>
+                <span><div class="status-dot"></div>&nbsp;<span data-i18n="hero_status">Available for work</span></span>
+                <span data-i18n="hero_current">Currently: Systems Analyst & Full Stack Developer</span>
             </div>
             <div class="title-mask"><h1 class="h1-rev">Brandon</h1></div>
             <div class="title-mask"><h1 class="h1-rev outline">Ventura</h1></div>
@@ -201,23 +183,25 @@
 
         <section class="intro-section trigger-light">
             <div class="intro-text">
-                <p class="reveal">
-                    Developer and programmer with solid experience in <span class="highlight">Microsoft technologies (.NET, C#, ASP.NET Core MVC)</span> and relational databases <span class="highlight">(SQL Server, DB2, MySQL)</span>. Able to design, develop, and implement modular and scalable business solutions. I have led projects involving integration with external platforms <span class="highlight">(SharePoint, ClickUp, Odoo, Moodle)</span>, authentication with <span class="highlight">Azure AD</span>, web scraping, bulk uploads from Excel, and complete CRUD management.
+                <p class="reveal" data-i18n-html="intro_p1">
+                    Full Stack Developer with solid experience in <span class="highlight">Microsoft technologies (.NET, C#, ASP.NET Core MVC)</span> and the <span class="highlight">Node.js / JavaScript</span> ecosystem. Specialized in designing modular enterprise solutions: from backend architecture with multiple database engines <span class="highlight">(SQL Server, DB2, PostgreSQL, MariaDB)</span> to responsive interfaces with <span class="highlight">Razor, AJAX, and DataTables</span>.
                 </p>
-                <p class="reveal">
-                    I stand out for combining robust backend with efficient interfaces in <span class="highlight">Razor, DataTables, and AJAX</span>, delivering clean, maintainable, and functional solutions. My approach is focused on solving real needs with efficiency, structure, and long-term vision.
+                <p class="reveal" data-i18n-html="intro_p2">
+                    I have led integrations with <span class="highlight">SharePoint, ClickUp, Azure AD, and Microsoft Graph API</span>, built real-time data synchronization services, and deployed infrastructure on Linux servers. Additionally, I have experience in <span class="highlight">applied AI (computer vision, LSTM)</span>, hardware programming, and corporate network administration. My approach is focused on solving real-world needs with efficiency, structure, and long-term vision.
                 </p>
             </div>
             
             <div class="focus-block reveal hover-target">
-                <h2>Focus & Tech Stack</h2>
+                <h2 data-i18n="focus_title">Focus & Tech Stack</h2>
                 <div class="tech-tags">
-                    <span>C# / .NET Core</span><span>ASP.NET MVC</span><span>Entity Framework</span><span>RESTful APIs</span>
-                    <span>Razor</span><span>JavaScript / AJAX</span><span>DataTables</span><span>Tailwind CSS</span>
-                    <span>SQL Server</span><span>DB2</span><span>MySQL</span>
+                    <span>C# / .NET Core</span><span>ASP.NET MVC</span><span>Node.js</span><span>Express.js</span>
+                    <span>RESTful APIs</span><span>OAuth 2.0 / JWT</span><span>Razor</span>
+                    <span>JavaScript / TypeScript</span><span>AJAX / DataTables</span><span>Tailwind CSS</span>
+                    <span>SQL Server</span><span>DB2</span><span>PostgreSQL</span><span>MariaDB</span><span>MySQL</span>
                     <span>Azure AD / Graph API</span><span>SharePoint API</span><span>ClickUp API</span>
-                    <span>Visual Studio</span><span>Git / GitHub</span><span>Swagger / Postman</span>
-                    <span>Ubuntu Server</span><span>Windows Server</span><span>VMware ESXi</span>
+                    <span>Python / MediaPipe / LSTM</span><span>Electron</span><span>Windows Services</span>
+                    <span>Ubuntu Server / Nginx</span><span>Zabbix / GLPI</span>
+                    <span>Git / GitHub</span><span>Swagger / Postman</span><span>Power BI</span>
                 </div>
             </div>
         </section>
@@ -225,13 +209,13 @@
         <section class="experience-section trigger-light">
             
             <div class="exp-row reveal hover-target">
-                <div class="exp-date">2023 — Pres.</div>
+                <div class="exp-date">2024 — <span data-i18n="present">Pres.</span></div>
                 <div class="exp-content">
-                    <h3>Systems Analyst & Full-Stack Developer</h3>
+                    <h3 data-i18n="job1_title">Systems Analyst & Full-Stack Developer</h3>
                     <h4>IMVESA — Importadora de Vehículos</h4>
-                    <p>Full-stack web development and systems integration using <strong>ASP.NET Core MVC</strong>, <strong>Angular</strong>, <strong>C#</strong>, and <strong>SQL Server / DB2</strong>. Specialized in building dynamic, data-driven web applications with <strong>Razor</strong>, <strong>AJAX</strong>, and <strong>DataTables</strong> for CRUD operations, reporting, Excel automation, and <strong>PowerBI</strong> analytics. Developed and maintained internal business platforms integrating <strong>Azure AD (Graph API)</strong>, <strong>SharePoint</strong>, and <strong>ClickUp</strong> for workflow automation and synchronization. Actively participated in UI/UX design, modular architecture, and API lifecycle management to ensure scalability and maintainability across corporate systems.</p>
+                    <p data-i18n-html="job1_desc">Full-stack development and systems integration using <strong>ASP.NET Core MVC</strong>, <strong>C#</strong>, and <strong>SQL Server / DB2 / PostgreSQL</strong>. Built complete CRUD modules including a corporate audit system (<strong>Caution-lists</strong>) with cross-searches by DNI/RTN, exchange-rate management with date validations, and policy management with agent workflows. Architected <strong>ClickUpSyncService</strong> and <strong>SharePointToSQLService</strong> — native Windows services for real-time, bidirectional data synchronization. Automated exchange-rate capture via <strong>C# web scraping</strong>, integrated <strong>Azure AD SSO</strong> with Microsoft Graph API, and standardized the data access layer across multiple DB engines. Deployed and customized <strong>Odoo 17</strong> and <strong>ERPNext</strong> on Ubuntu Server, and programmed direct-print routines for <strong>Zebra / Xprinter</strong> thermal hardware using ZPL and ESC/P.</p>
                     <div class="tech-tags">
-                        <span>C# / .NET Core</span><span>ASP.NET MVC</span><span>SQL Server / DB2 / MySQL</span><span>JavaScript / TypeScript</span><span>Razor + DataTables</span><span>HTML5 / CSS3 / Bootstrap 5 / Tailwind CSS</span><span>Azure AD / Graph API</span><span>SharePoint / ClickUp</span><span>PowerBI</span><span>REST APIs / JSON</span><span>Automation / Windows Services</span><span>UI/UX Design</span>
+                        <span>C# / .NET Core</span><span>ASP.NET MVC</span><span>SQL Server / DB2 / PostgreSQL / MariaDB</span><span>JavaScript / TypeScript</span><span>Razor + DataTables</span><span>Tailwind CSS / Bootstrap</span><span>Azure AD / Graph API</span><span>SharePoint / ClickUp</span><span>Windows Services</span><span>Odoo / ERPNext</span><span>ZPL / ESC/P</span><span>Web Scraping</span>
                     </div>
                 </div>
             </div>
@@ -239,11 +223,11 @@
             <div class="exp-row reveal hover-target">
                 <div class="exp-date">2023 — 2024</div>
                 <div class="exp-content">
-                    <h3>Data Center Operator & Web Developer</h3>
+                    <h3 data-i18n="job2_title">Data Center Operator & Web Developer</h3>
                     <h4>GBM de Honduras</h4>
-                    <p>Provided operational support for mission-critical systems, monitoring infrastructure, handling incidents, and executing change controls. Designed and developed <strong>internal web tools</strong> to automate repetitive IT tasks, improving data visibility and reducing manual workloads. Collaborated with regional teams to implement lightweight dashboards and internal reporting systems.</p>
+                    <p data-i18n-html="job2_desc">Operated and monitored mission-critical Data Center infrastructure: visual controls, remote support, incident management, and new installation assistance. Deployed and administered <strong>Zabbix</strong> and <strong>GLPI</strong> monitoring platforms; developed automation scripts for ticket management and <strong>MariaDB deadlock mitigation</strong>. Configured enterprise networks with <strong>MikroTik</strong> routers (Winbox) and remote UniFi AP adoption via SSH. Also developed internal web tools to automate operational tasks and improve team efficiency.</p>
                     <div class="tech-tags">
-                        <span>Monitoring</span><span>Incident Mgmt</span><span>Web Apps</span><span>Automation</span><span>HTML / CSS / JS</span><span>Team Collaboration</span>
+                        <span>Zabbix / GLPI</span><span>MikroTik / UniFi</span><span>MariaDB</span><span>Incident Mgmt</span><span>Web Apps</span><span>Automation Scripts</span><span>Ubuntu / Linux</span>
                     </div>
                 </div>
             </div>
@@ -251,9 +235,9 @@
             <div class="exp-row reveal hover-target">
                 <div class="exp-date">2023</div>
                 <div class="exp-content">
-                    <h3>Computer Science Teacher</h3>
+                    <h3 data-i18n="job3_title">Computer Science Teacher</h3>
                     <h4>C.E.B. No Gubernamental JASAMA</h4>
-                    <p>Taught logical-mathematical reasoning, programming fundamentals, and applied technology through hands-on projects in <strong>web development</strong> and <strong>basic robotics</strong>. Guided students in creating interactive applications using <strong>HTML, CSS, and JavaScript</strong>, and introduced them to <strong>Arduino</strong> and <strong>microcontroller programming</strong> for automation and sensor-based projects, fostering creativity and problem-solving skills.</p>
+                    <p data-i18n-html="job3_desc">Taught logical-mathematical reasoning, programming fundamentals, and applied technology through hands-on projects in <strong>web development</strong> and <strong>basic robotics</strong>. Guided students in creating interactive applications using <strong>HTML, CSS, and JavaScript</strong>, and introduced them to <strong>Arduino</strong> and <strong>microcontroller programming</strong> for automation and sensor-based projects, fostering creativity and problem-solving skills.</p>
                     <div class="tech-tags">
                         <span>HTML / CSS / JavaScript</span><span>Arduino</span><span>Microcontrollers</span><span>Web & Robotics Projects</span><span>Teaching</span>
                     </div>
@@ -263,9 +247,9 @@
             <div class="exp-row reveal hover-target">
                 <div class="exp-date">2022</div>
                 <div class="exp-content">
-                    <h3>Engineering Assistant</h3>
+                    <h3 data-i18n="job4_title">Engineering Assistant</h3>
                     <h4>Delta Apparel Honduras</h4>
-                    <p>Developed production calculation formats and internal management software for the Engineering Department, improving efficiency in plant data tracking and reporting. Implemented automation tools and desktop applications using <strong>Visual Basic (VB)</strong> and <strong>Excel macros</strong> for real-time performance analysis and operational monitoring.</p>
+                    <p data-i18n-html="job4_desc">Developed production calculation formats and internal management software for the Engineering Department, improving efficiency in plant data tracking and reporting. Implemented automation tools and desktop applications using <strong>Visual Basic (VB)</strong> and <strong>Excel macros</strong> for real-time performance analysis and operational monitoring.</p>
                     <div class="tech-tags">
                         <span>Visual Basic (VB)</span><span>Excel Automation</span><span>Process Tools</span><span>Reporting</span>
                     </div>
@@ -275,9 +259,9 @@
             <div class="exp-row reveal hover-target">
                 <div class="exp-date">2021 — 2022</div>
                 <div class="exp-content">
-                    <h3>Information Technology Technician</h3>
+                    <h3 data-i18n="job5_title">Information Technology Technician</h3>
                     <h4>Dirección Municipal de Educación — San Manuel, Cortés</h4>
-                    <p>Equipment/network maintenance, database handling, and workflow digitalization. Built management tools and ensured data quality and control.</p>
+                    <p data-i18n-html="job5_desc">Equipment and network maintenance, database handling, and workflow digitalization. Built management and data-entry tools to ensure data quality, information control, and efficient records management.</p>
                     <div class="tech-tags">
                         <span>IT Support</span><span>Databases</span>
                     </div>
@@ -291,117 +275,95 @@
                 <div class="horizontal-wrapper">
                     
                     <div class="horizontal-intro">
-                        <h2>Recent<br><span class="outline">Projects</span></h2>
+                        <h2><span data-i18n="projects_label">Recent</span><br><span class="outline"><span data-i18n="projects_label2">Projects</span></span></h2>
                     </div>
 
                     <div class="project-card">
                         <span class="date">Jan 2025</span>
-                        <h3>RRHH SYSTEM — Employee Attendance System</h3>
-                        <p>Desktop application built with <strong>Electron</strong>, <strong>Node.js</strong>, <strong>TailwindCSS</strong>, and <strong>SQL Server</strong> for real-time management and reporting of employee attendance. Includes dashboards, advanced filters, Excel export, and automatic updates for HR analytics.</p>
-                        <div class="tech-tags">
-                            <span>Electron</span><span>Node.js</span><span>TailwindCSS</span><span>SQL Server</span><span>SheetJS</span>
-                        </div>
-                        <div class="read-more">Read more →</div>
+                        <h3>RRHH SYSTEM — <span data-i18n="p1_title">Employee Attendance System</span></h3>
+                        <p data-i18n-html="p1_desc">Desktop application built with <strong>Electron</strong>, <strong>Node.js</strong>, <strong>TailwindCSS</strong>, and <strong>SQL Server</strong> for real-time management and reporting of employee attendance. Includes dashboards, advanced filters, Excel export, and automatic updates for HR analytics.</p>
+                        <div class="tech-tags"><span>Electron</span><span>Node.js</span><span>TailwindCSS</span><span>SQL Server</span><span>SheetJS</span></div>
+                        <div class="read-more" data-i18n="read_more">Read more →</div>
                     </div>
 
                     <div class="project-card">
                         <span class="date">Nov 2024</span>
-                        <h3>SharePointToSQLService — Data Sync Automation</h3>
-                        <p>Windows Service built with <strong>.NET 9.0</strong> that automates Excel-to-database synchronization between <strong>SharePoint</strong> and <strong>SQL Server</strong>. Uses <strong>Microsoft Graph API</strong> for secure file retrieval, <strong>ClosedXML</strong> for Excel parsing, and background processing with <strong>Worker Service</strong> to ensure real-time, traceable data updates.</p>
-                        <div class="tech-tags">
-                            <span>.NET 9.0</span><span>Worker Service</span><span>Microsoft Graph API</span><span>ClosedXML</span><span>SQL Server</span><span>Windows Service</span>
-                        </div>
-                        <div class="read-more">Read more →</div>
+                        <h3>SharePointToSQLService — <span data-i18n="p2_title">Data Sync Automation</span></h3>
+                        <p data-i18n-html="p2_desc">Windows Service built with <strong>.NET 9.0</strong> that automates Excel-to-database synchronization between <strong>SharePoint</strong> and <strong>SQL Server</strong>. Uses <strong>Microsoft Graph API</strong> for secure file retrieval, <strong>ClosedXML</strong> for Excel parsing, and background processing with <strong>Worker Service</strong> to ensure real-time, traceable data updates.</p>
+                        <div class="tech-tags"><span>.NET 9.0</span><span>Worker Service</span><span>Microsoft Graph API</span><span>ClosedXML</span><span>SQL Server</span><span>Windows Service</span></div>
+                        <div class="read-more" data-i18n="read_more">Read more →</div>
                     </div>
 
                     <div class="project-card">
                         <span class="date">Aug 2024</span>
-                        <h3>ClickUpSyncService — Task Data Integration</h3>
-                        <p>Windows Service built in <strong>C#</strong> under <strong>.NET Framework 4.0</strong> to synchronize and automate data exchange between <strong>ClickUp</strong> and internal systems. Handles API communication, JSON processing with <strong>Newtonsoft.Json</strong>, and log-based monitoring for reliability and background task execution.</p>
-                        <div class="tech-tags">
-                            <span>C#</span><span>.NET Framework 4.0</span><span>Windows Service</span><span>ClickUp API</span><span>Newtonsoft.Json</span><span>Automation</span>
-                        </div>
-                        <div class="read-more">Read more →</div>
+                        <h3>ClickUpSyncService — <span data-i18n="p3_title">Task Data Integration</span></h3>
+                        <p data-i18n-html="p3_desc">Windows Service built in <strong>C#</strong> under <strong>.NET Framework 4.0</strong> to synchronize and automate data exchange between <strong>ClickUp</strong> and internal systems. Handles API communication, JSON processing with <strong>Newtonsoft.Json</strong>, and log-based monitoring for reliability and background task execution.</p>
+                        <div class="tech-tags"><span>C#</span><span>.NET Framework 4.0</span><span>Windows Service</span><span>ClickUp API</span><span>Newtonsoft.Json</span><span>Automation</span></div>
+                        <div class="read-more" data-i18n="read_more">Read more →</div>
                     </div>
 
                     <div class="project-card">
                         <span class="date">Oct 2024</span>
-                        <h3>MySQLtoSQLServerSync — Cross-Database Synchronization</h3>
-                        <p>Data synchronization application developed in <strong>C#</strong> with <strong>.NET 9.0</strong>, designed to keep <strong>MySQL</strong> and <strong>SQL Server</strong> databases aligned in real time. Implements robust data handling, compression, and hashing using <strong>Google.Protobuf</strong>, <strong>LZ4</strong>, and <strong>xxHash</strong> for efficient and secure transfers.</p>
-                        <div class="tech-tags">
-                            <span>C# / .NET 9.0</span><span>MySQL</span><span>SQL Server</span><span>Google.Protobuf</span><span>LZ4 / xxHash</span><span>BouncyCastle</span>
-                        </div>
-                        <div class="read-more">Read more →</div>
+                        <h3>MySQLtoSQLServerSync — <span data-i18n="p4_title">Cross-Database Synchronization</span></h3>
+                        <p data-i18n-html="p4_desc">Data synchronization application developed in <strong>C#</strong> with <strong>.NET 9.0</strong>, designed to keep <strong>MySQL</strong> and <strong>SQL Server</strong> databases aligned in real time. Implements robust data handling, compression, and hashing using <strong>Google.Protobuf</strong>, <strong>LZ4</strong>, and <strong>xxHash</strong> for efficient and secure transfers.</p>
+                        <div class="tech-tags"><span>C# / .NET 9.0</span><span>MySQL</span><span>SQL Server</span><span>Google.Protobuf</span><span>LZ4 / xxHash</span><span>BouncyCastle</span></div>
+                        <div class="read-more" data-i18n="read_more">Read more →</div>
                     </div>
 
                     <div class="project-card">
                         <span class="date">Jul 2024</span>
-                        <h3>ShowRoom Foton — Interactive Vehicle Explorer</h3>
-                        <p>Interactive web application for exploring <strong>Foton vehicle models</strong>. Developed with <strong>Vue.js</strong>, <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, featuring color selectors, model variants, technical specs, and multimedia galleries. Includes <strong>AJAX</strong> data loading, <strong>Animate.css</strong> transitions, and multilingual JSON support.</p>
-                        <div class="tech-tags">
-                            <span>Vue.js</span><span>JavaScript (ES6+)</span><span>HTML5 / CSS3</span><span>jQuery / AJAX</span><span>Animate.css</span><span>JSON / Multilanguage</span>
-                        </div>
-                        <div class="read-more">Read more →</div>
+                        <h3>ShowRoom Foton — <span data-i18n="p5_title">Interactive Vehicle Explorer</span></h3>
+                        <p data-i18n-html="p5_desc">Interactive web application for exploring <strong>Foton vehicle models</strong>. Developed with <strong>Vue.js</strong>, <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, featuring color selectors, model variants, technical specs, and multimedia galleries. Includes <strong>AJAX</strong> data loading, <strong>Animate.css</strong> transitions, and multilingual JSON support.</p>
+                        <div class="tech-tags"><span>Vue.js</span><span>JavaScript (ES6+)</span><span>HTML5 / CSS3</span><span>jQuery / AJAX</span><span>Animate.css</span><span>JSON / Multilanguage</span></div>
+                        <div class="read-more" data-i18n="read_more">Read more →</div>
                     </div>
 
                     <div class="project-card">
                         <span class="date">Jun 2024</span>
-                        <h3>PSSWD — Authentication & User Management</h3>
-                        <p>Full-stack system for <strong>user authentication and access control</strong> integrating <strong>Azure AD</strong>, <strong>Active Directory</strong>, and <strong>MySQL</strong>. Built with <strong>ASP.NET Core Web API</strong> and <strong>HTML5 / JavaScript</strong> frontend, it centralizes credential validation, synchronization, and secure user provisioning across corporate environments.</p>
-                        <div class="tech-tags">
-                            <span>ASP.NET Core</span><span>C# / .NET 6+</span><span>Azure AD</span><span>Active Directory</span><span>MySQL</span><span>HTML5 / JavaScript</span><span>Node.js Scripts</span>
-                        </div>
-                        <div class="read-more">Read more →</div>
+                        <h3>PSSWD — <span data-i18n="p6_title">Authentication & User Management</span></h3>
+                        <p data-i18n-html="p6_desc">Full-stack system for <strong>user authentication and access control</strong> integrating <strong>Azure AD</strong>, <strong>Active Directory</strong>, and <strong>MySQL</strong>. Built with <strong>ASP.NET Core Web API</strong> and <strong>HTML5 / JavaScript</strong> frontend, it centralizes credential validation, synchronization, and secure user provisioning across corporate environments.</p>
+                        <div class="tech-tags"><span>ASP.NET Core</span><span>C# / .NET 6+</span><span>Azure AD</span><span>Active Directory</span><span>MySQL</span><span>HTML5 / JavaScript</span><span>Node.js Scripts</span></div>
+                        <div class="read-more" data-i18n="read_more">Read more →</div>
                     </div>
 
                     <div class="project-card">
                         <span class="date">May 2024</span>
-                        <h3>Convertexcel — Lead Conversion Tool</h3>
-                        <p>Desktop application built with <strong>Electron</strong> for converting <strong>Clientify</strong> lead exports into CRM-compatible Excel templates. Provides a simple interface for uploading, processing, and formatting files using <strong>Node.js</strong> scripts and predefined Excel templates.</p>
-                        <div class="tech-tags">
-                            <span>Electron</span><span>Node.js</span><span>HTML / JavaScript</span><span>Excel Templates</span><span>electron-builder</span>
-                        </div>
-                        <div class="read-more">Read more →</div>
+                        <h3>Convertexcel — <span data-i18n="p7_title">Lead Conversion Tool</span></h3>
+                        <p data-i18n-html="p7_desc">Desktop application built with <strong>Electron</strong> for converting <strong>Clientify</strong> lead exports into CRM-compatible Excel templates. Provides a simple interface for uploading, processing, and formatting files using <strong>Node.js</strong> scripts and predefined Excel templates.</p>
+                        <div class="tech-tags"><span>Electron</span><span>Node.js</span><span>HTML / JavaScript</span><span>Excel Templates</span><span>electron-builder</span></div>
+                        <div class="read-more" data-i18n="read_more">Read more →</div>
                     </div>
 
                     <div class="project-card">
                         <span class="date">Mar 2024</span>
-                        <h3>Caution-lists — Compliance & Watchlist Management</h3>
-                        <p>Web system for managing and auditing corporate <strong>watchlists</strong> (PEP, blacklists, etc.). Supports DNI/RTN searches across multiple tables, <strong>email alerts</strong> on matches, record lifecycle (add, edit, hide/restore), <strong>Excel import/export</strong>, consultation history, and basic role-based access.</p>
-                        <div class="tech-tags">
-                            <span>PHP (mysqli)</span><span>MySQL / MariaDB</span><span>DataTables</span><span>Bootstrap</span><span>SweetAlert2</span><span>PhpSpreadsheet</span><span>PHPMailer</span><span>Nginx / Apache</span>
-                        </div>
-                        <div class="read-more">Read more →</div>
+                        <h3>Caution-lists — <span data-i18n="p8_title">Compliance & Watchlist Management</span></h3>
+                        <p data-i18n-html="p8_desc">Web system for managing and auditing corporate <strong>watchlists</strong> (PEP, blacklists, etc.). Supports DNI/RTN searches across multiple tables, <strong>email alerts</strong> on matches, record lifecycle (add, edit, hide/restore), <strong>Excel import/export</strong>, consultation history, and basic role-based access.</p>
+                        <div class="tech-tags"><span>PHP (mysqli)</span><span>MySQL / MariaDB</span><span>DataTables</span><span>Bootstrap</span><span>SweetAlert2</span><span>PhpSpreadsheet</span><span>PHPMailer</span><span>Nginx / Apache</span></div>
+                        <div class="read-more" data-i18n="read_more">Read more →</div>
                     </div>
 
                     <div class="project-card">
                         <span class="date">Feb 2024</span>
-                        <h3>GBM Medios — Tape Inventory Management System</h3>
-                        <p>Web platform developed for the <strong>GBM Honduras Data Center</strong> to manage and track <strong>tape media inventory</strong>. Includes user role management (Root, Admin, Operator), detailed reports, <strong>SMTP notifications</strong>, and action history with audit trails. Built with <strong>PHP</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, and <strong>SQL Server</strong> on an <strong>Ubuntu Server (Nginx)</strong>.</p>
-                        <div class="tech-tags">
-                            <span>PHP</span><span>Node.js / Express.js</span><span>SQL Server</span><span>HTML / CSS / JavaScript</span><span>Bootstrap-icons / Lordicon</span><span>Postfix SMTP</span><span>Ubuntu / Nginx</span>
-                        </div>
-                        <div class="read-more">Read more →</div>
+                        <h3>GBM Medios — <span data-i18n="p9_title">Tape Inventory Management System</span></h3>
+                        <p data-i18n-html="p9_desc">Web platform developed for the <strong>GBM Honduras Data Center</strong> to manage and track <strong>tape media inventory</strong>. Includes user role management (Root, Admin, Operator), detailed reports, <strong>SMTP notifications</strong>, and action history with audit trails. Built with <strong>PHP</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, and <strong>SQL Server</strong> on an <strong>Ubuntu Server (Nginx)</strong>.</p>
+                        <div class="tech-tags"><span>PHP</span><span>Node.js / Express.js</span><span>SQL Server</span><span>HTML / CSS / JavaScript</span><span>Bootstrap-icons / Lordicon</span><span>Postfix SMTP</span><span>Ubuntu / Nginx</span></div>
+                        <div class="read-more" data-i18n="read_more">Read more →</div>
                     </div>
 
                     <div class="project-card">
                         <span class="date">Jan 2024</span>
-                        <h3>PixelHub — Interactive Gaming Website</h3>
-                        <p>Video game showcase website built with <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, designed to deliver a clean, responsive, and interactive user experience. Features include dynamic <strong>modals</strong>, grid-based game listings, and integration of <strong>Bootstrap</strong> and <strong>Chart.js</strong> for enhanced visuals and data presentation.</p>
-                        <div class="tech-tags">
-                            <span>HTML5 / CSS3</span><span>JavaScript (ES6)</span><span>Bootstrap</span><span>Chart.js</span><span>Google Fonts</span><span>Responsive Design</span>
-                        </div>
-                        <div class="read-more">Read more →</div>
+                        <h3>PixelHub — <span data-i18n="p10_title">Interactive Gaming Website</span></h3>
+                        <p data-i18n-html="p10_desc">Video game showcase website built with <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, designed to deliver a clean, responsive, and interactive user experience. Features include dynamic <strong>modals</strong>, grid-based game listings, and integration of <strong>Bootstrap</strong> and <strong>Chart.js</strong> for enhanced visuals and data presentation.</p>
+                        <div class="tech-tags"><span>HTML5 / CSS3</span><span>JavaScript (ES6)</span><span>Bootstrap</span><span>Chart.js</span><span>Google Fonts</span><span>Responsive Design</span></div>
+                        <div class="read-more" data-i18n="read_more">Read more →</div>
                     </div>
 
                     <div class="project-card">
                         <span class="date">Dec 2023</span>
-                        <h3>This Music — Spotify & YouTube Search App</h3>
-                        <p>Web application that integrates the <strong>Spotify</strong> and <strong>YouTube APIs</strong> to search, display, and play songs or videos directly in the browser. Built with <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, it features animated search, responsive design, and dynamic result tables with playback support.</p>
-                        <div class="tech-tags">
-                            <span>HTML5 / CSS3</span><span>JavaScript (ES6)</span><span>Spotify API</span><span>YouTube API</span><span>Responsive Design</span><span>Google Fonts / Lordicon</span>
-                        </div>
-                        <div class="read-more">Read more →</div>
+                        <h3>This Music — <span data-i18n="p11_title">Spotify & YouTube Search App</span></h3>
+                        <p data-i18n-html="p11_desc">Web application that integrates the <strong>Spotify</strong> and <strong>YouTube APIs</strong> to search, display, and play songs or videos directly in the browser. Built with <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, it features animated search, responsive design, and dynamic result tables with playback support.</p>
+                        <div class="tech-tags"><span>HTML5 / CSS3</span><span>JavaScript (ES6)</span><span>Spotify API</span><span>YouTube API</span><span>Responsive Design</span><span>Google Fonts / Lordicon</span></div>
+                        <div class="read-more" data-i18n="read_more">Read more →</div>
                     </div>
 
                 </div>
@@ -409,19 +371,16 @@
         </section>
 
         <footer class="footer-huge trigger-light">
-            
             <div class="connect-intro reveal hover-target">
-                <h2>Let's Connect</h2>
-                <p>Always interested in new opportunities, collaborations, and conversations about technology and design.</p>
+                <h2 data-i18n="footer_connect">Let's Connect</h2>
+                <p data-i18n="footer_sub">Always interested in new opportunities, collaborations, and conversations about technology and design.</p>
             </div>
-
             <div class="footer-content hover-target">
                 <a href="mailto:brandonstanlyv@gmail.com" class="email-link">
                     brandonstanlyv<br>
                     <span class="outline">@gmail.com</span><span class="email-arrow">↗</span>
                 </a>
             </div>
-            
             <div class="footer-grid">
                 <div>
                     <span style="color: var(--accent);">GitHub</span>
@@ -432,7 +391,7 @@
                     <a href="mailto:stansvdev@gmail.com" class="hover-target">stansvdev@gmail.com</a>
                 </div>
                 <div>
-                    <span style="color: var(--accent);">Number Phone</span>
+                    <span style="color: var(--accent);" data-i18n="footer_phone">Phone</span>
                     <a href="#" class="hover-target">+504 99223861</a>
                 </div>
                 <div>
@@ -444,73 +403,187 @@
     </main>
 
     <script>
-        // CURSOR LOGIC (Se desactiva visualmente el CSS del cursor custom en móviles por default gracias al pointer:coarse del navegador, pero lo mantenemos para escritorio)
-        const cursor = document.querySelector('.custom-cursor');
-        document.addEventListener('mousemove', e => {
-            gsap.to(cursor, {x: e.clientX, y: e.clientY, duration: 0.1 });
+    // ─── I18N ────────────────────────────────────────────────────────────────
+    const translations = {
+        en: {
+            nav_portfolio:  "PORTFOLIO / 2026",
+            nav_location:   "Honduras",
+            hero_status:    "Available for work",
+            hero_current:   "Currently: Systems Analyst & Full Stack Developer",
+            intro_p1:       `Full Stack Developer with solid experience in <span class="highlight">Microsoft technologies (.NET, C#, ASP.NET Core MVC)</span> and the <span class="highlight">Node.js / JavaScript</span> ecosystem. Specialized in designing modular enterprise solutions: from backend architecture with multiple database engines <span class="highlight">(SQL Server, DB2, PostgreSQL, MariaDB)</span> to responsive interfaces with <span class="highlight">Razor, AJAX, and DataTables</span>.`,
+            intro_p2:       `I have led integrations with <span class="highlight">SharePoint, ClickUp, Azure AD, and Microsoft Graph API</span>, built real-time data synchronization services, and deployed infrastructure on Linux servers. Additionally, I have experience in <span class="highlight">applied AI (computer vision, LSTM)</span>, hardware programming, and corporate network administration. My approach is focused on solving real-world needs with efficiency, structure, and long-term vision.`,
+            focus_title:    "Focus & Tech Stack",
+            present:        "Pres.",
+            job1_title:     "Systems Analyst & Full-Stack Developer",
+            job1_desc:      `Full-stack development and systems integration using <strong>ASP.NET Core MVC</strong>, <strong>C#</strong>, and <strong>SQL Server / DB2 / PostgreSQL</strong>. Built complete CRUD modules including a corporate audit system (<strong>Caution-lists</strong>) with cross-searches by DNI/RTN, exchange-rate management with date validations, and policy management with agent workflows. Architected <strong>ClickUpSyncService</strong> and <strong>SharePointToSQLService</strong> — native Windows services for real-time, bidirectional data synchronization. Automated exchange-rate capture via <strong>C# web scraping</strong>, integrated <strong>Azure AD SSO</strong> with Microsoft Graph API, and standardized the data access layer across multiple DB engines. Deployed and customized <strong>Odoo 17</strong> and <strong>ERPNext</strong> on Ubuntu Server, and programmed direct-print routines for <strong>Zebra / Xprinter</strong> thermal hardware using ZPL and ESC/P.`,
+            job2_title:     "Data Center Operator & Web Developer",
+            job2_desc:      `Operated and monitored mission-critical Data Center infrastructure: visual controls, remote support, incident management, and new installation assistance. Deployed and administered <strong>Zabbix</strong> and <strong>GLPI</strong> monitoring platforms; developed automation scripts for ticket management and <strong>MariaDB deadlock mitigation</strong>. Configured enterprise networks with <strong>MikroTik</strong> routers (Winbox) and remote UniFi AP adoption via SSH. Also developed internal web tools to automate operational tasks and improve team efficiency.`,
+            job3_title:     "Computer Science Teacher",
+            job3_desc:      `Taught logical-mathematical reasoning, programming fundamentals, and applied technology through hands-on projects in <strong>web development</strong> and <strong>basic robotics</strong>. Guided students in creating interactive applications using <strong>HTML, CSS, and JavaScript</strong>, and introduced them to <strong>Arduino</strong> and <strong>microcontroller programming</strong> for automation and sensor-based projects, fostering creativity and problem-solving skills.`,
+            job4_title:     "Engineering Assistant",
+            job4_desc:      `Developed production calculation formats and internal management software for the Engineering Department, improving efficiency in plant data tracking and reporting. Implemented automation tools and desktop applications using <strong>Visual Basic (VB)</strong> and <strong>Excel macros</strong> for real-time performance analysis and operational monitoring.`,
+            job5_title:     "Information Technology Technician",
+            job5_desc:      `Equipment and network maintenance, database handling, and workflow digitalization. Built management and data-entry tools to ensure data quality, information control, and efficient records management.`,
+            projects_label: "Recent",
+            projects_label2:"Projects",
+            read_more:      "Read more →",
+            p1_title:  "Employee Attendance System",
+            p1_desc:   `Desktop application built with <strong>Electron</strong>, <strong>Node.js</strong>, <strong>TailwindCSS</strong>, and <strong>SQL Server</strong> for real-time management and reporting of employee attendance. Includes dashboards, advanced filters, Excel export, and automatic updates for HR analytics.`,
+            p2_title:  "Data Sync Automation",
+            p2_desc:   `Windows Service built with <strong>.NET 9.0</strong> that automates Excel-to-database synchronization between <strong>SharePoint</strong> and <strong>SQL Server</strong>. Uses <strong>Microsoft Graph API</strong> for secure file retrieval, <strong>ClosedXML</strong> for Excel parsing, and background processing with <strong>Worker Service</strong> to ensure real-time, traceable data updates.`,
+            p3_title:  "Task Data Integration",
+            p3_desc:   `Windows Service built in <strong>C#</strong> under <strong>.NET Framework 4.0</strong> to synchronize and automate data exchange between <strong>ClickUp</strong> and internal systems. Handles API communication, JSON processing with <strong>Newtonsoft.Json</strong>, and log-based monitoring for reliability and background task execution.`,
+            p4_title:  "Cross-Database Synchronization",
+            p4_desc:   `Data synchronization application developed in <strong>C#</strong> with <strong>.NET 9.0</strong>, designed to keep <strong>MySQL</strong> and <strong>SQL Server</strong> databases aligned in real time. Implements robust data handling, compression, and hashing using <strong>Google.Protobuf</strong>, <strong>LZ4</strong>, and <strong>xxHash</strong> for efficient and secure transfers.`,
+            p5_title:  "Interactive Vehicle Explorer",
+            p5_desc:   `Interactive web application for exploring <strong>Foton vehicle models</strong>. Developed with <strong>Vue.js</strong>, <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, featuring color selectors, model variants, technical specs, and multimedia galleries. Includes <strong>AJAX</strong> data loading, <strong>Animate.css</strong> transitions, and multilingual JSON support.`,
+            p6_title:  "Authentication & User Management",
+            p6_desc:   `Full-stack system for <strong>user authentication and access control</strong> integrating <strong>Azure AD</strong>, <strong>Active Directory</strong>, and <strong>MySQL</strong>. Built with <strong>ASP.NET Core Web API</strong> and <strong>HTML5 / JavaScript</strong> frontend, it centralizes credential validation, synchronization, and secure user provisioning across corporate environments.`,
+            p7_title:  "Lead Conversion Tool",
+            p7_desc:   `Desktop application built with <strong>Electron</strong> for converting <strong>Clientify</strong> lead exports into CRM-compatible Excel templates. Provides a simple interface for uploading, processing, and formatting files using <strong>Node.js</strong> scripts and predefined Excel templates.`,
+            p8_title:  "Compliance & Watchlist Management",
+            p8_desc:   `Web system for managing and auditing corporate <strong>watchlists</strong> (PEP, blacklists, etc.). Supports DNI/RTN searches across multiple tables, <strong>email alerts</strong> on matches, record lifecycle (add, edit, hide/restore), <strong>Excel import/export</strong>, consultation history, and basic role-based access.`,
+            p9_title:  "Tape Inventory Management System",
+            p9_desc:   `Web platform developed for the <strong>GBM Honduras Data Center</strong> to manage and track <strong>tape media inventory</strong>. Includes user role management (Root, Admin, Operator), detailed reports, <strong>SMTP notifications</strong>, and action history with audit trails. Built with <strong>PHP</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, and <strong>SQL Server</strong> on an <strong>Ubuntu Server (Nginx)</strong>.`,
+            p10_title: "Interactive Gaming Website",
+            p10_desc:  `Video game showcase website built with <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, designed to deliver a clean, responsive, and interactive user experience. Features include dynamic <strong>modals</strong>, grid-based game listings, and integration of <strong>Bootstrap</strong> and <strong>Chart.js</strong> for enhanced visuals and data presentation.`,
+            p11_title: "Spotify & YouTube Search App",
+            p11_desc:  `Web application that integrates the <strong>Spotify</strong> and <strong>YouTube APIs</strong> to search, display, and play songs or videos directly in the browser. Built with <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>JavaScript</strong>, it features animated search, responsive design, and dynamic result tables with playback support.`,
+            footer_connect: "Let's Connect",
+            footer_sub:     "Always interested in new opportunities, collaborations, and conversations about technology and design.",
+            footer_phone:   "Phone",
+        },
+        es: {
+            nav_portfolio:  "PORTAFOLIO / 2026",
+            nav_location:   "Honduras",
+            hero_status:    "Disponible para trabajar",
+            hero_current:   "Actualmente: Analista y Desarrollador Full Stack",
+            intro_p1:       `Desarrollador Full Stack con sólida experiencia en <span class="highlight">tecnologías Microsoft (.NET, C#, ASP.NET Core MVC)</span> y el ecosistema <span class="highlight">Node.js / JavaScript</span>. Especializado en el diseño de soluciones empresariales modulares: desde arquitectura backend con múltiples motores de base de datos <span class="highlight">(SQL Server, DB2, PostgreSQL, MariaDB)</span> hasta interfaces responsivas con <span class="highlight">Razor, AJAX y DataTables</span>.`,
+            intro_p2:       `He liderado integraciones con <span class="highlight">SharePoint, ClickUp, Azure AD y Microsoft Graph API</span>, construido servicios de sincronización de datos en tiempo real y desplegado infraestructura en servidores Linux. Adicionalmente, tengo experiencia en <span class="highlight">IA aplicada (visión computacional, LSTM)</span>, programación de hardware y administración de redes corporativas. Mi enfoque está orientado a resolver necesidades reales con eficiencia, estructura y visión a largo plazo.`,
+            focus_title:    "Enfoque & Stack Tecnológico",
+            present:        "Act.",
+            job1_title:     "Analista y Desarrollador Full-Stack",
+            job1_desc:      `Desarrollo full-stack e integración de sistemas usando <strong>ASP.NET Core MVC</strong>, <strong>C#</strong> y <strong>SQL Server / DB2 / PostgreSQL</strong>. Construcción de módulos CRUD completos incluyendo un sistema de auditoría corporativa (<strong>Caution-lists</strong>) con búsquedas cruzadas por DNI/RTN, gestión de factores de cambio con validaciones por fecha y pólizas con flujos de cambio de agente. Arquitectura de <strong>ClickUpSyncService</strong> y <strong>SharePointToSQLService</strong> — servicios nativos de Windows para sincronización bidireccional en tiempo real. Automatización de captura de tasas de cambio via <strong>web scraping en C#</strong>, integración de <strong>SSO con Azure AD</strong> y Microsoft Graph API, y estandarización de la capa de acceso a datos. Despliegue y personalización de <strong>Odoo 17</strong> y <strong>ERPNext</strong> en Ubuntu Server, y rutinas de impresión directa para hardware térmico <strong>Zebra / Xprinter</strong> con ZPL y ESC/P.`,
+            job2_title:     "Operador de Data Center & Desarrollador Web",
+            job2_desc:      `Operación y monitoreo de infraestructura crítica de Data Center: controles visuales, soporte remoto, gestión de incidentes y asistencia en nuevas instalaciones. Despliegue y administración de plataformas de monitoreo <strong>Zabbix</strong> y <strong>GLPI</strong>; desarrollo de scripts de automatización para gestión de tickets y mitigación de <strong>deadlocks en MariaDB</strong>. Configuración de redes empresariales con routers <strong>MikroTik</strong> (Winbox) y adopción remota de APs UniFi por SSH. Desarrollo de herramientas web internas para automatizar tareas operativas y mejorar la eficiencia del equipo.`,
+            job3_title:     "Profesor de Informática",
+            job3_desc:      `Enseñanza de razonamiento lógico-matemático, fundamentos de programación y tecnología aplicada a través de proyectos prácticos de <strong>desarrollo web</strong> y <strong>robótica básica</strong>. Guía a estudiantes en la creación de aplicaciones interactivas usando <strong>HTML, CSS y JavaScript</strong>, e introducción a <strong>Arduino</strong> y <strong>programación de microcontroladores</strong> para proyectos de automatización y sensores.`,
+            job4_title:     "Auxiliar de Ingeniería",
+            job4_desc:      `Desarrollo de formatos de cálculo de producción y software de gestión interno para el Departamento de Ingeniería, mejorando la eficiencia en el seguimiento y reporte de datos de planta. Implementación de herramientas de automatización usando <strong>Visual Basic (VB)</strong> y <strong>macros de Excel</strong> para análisis de rendimiento en tiempo real y monitoreo operativo.`,
+            job5_title:     "Técnico en Infotecnología",
+            job5_desc:      `Mantenimiento de equipos y redes, gestión de bases de datos y digitalización de flujos de trabajo. Construcción de herramientas de gestión e ingreso de datos para garantizar calidad de información y control eficiente de expedientes.`,
+            projects_label: "Proyectos",
+            projects_label2:"Recientes",
+            read_more:      "Ver más →",
+            p1_title:  "Sistema de Asistencia de Empleados",
+            p1_desc:   `Aplicación de escritorio construida con <strong>Electron</strong>, <strong>Node.js</strong>, <strong>TailwindCSS</strong> y <strong>SQL Server</strong> para la gestión y reporte en tiempo real de asistencia de empleados. Incluye dashboards, filtros avanzados, exportación a Excel y actualizaciones automáticas para analítica de RRHH.`,
+            p2_title:  "Automatización de Sincronización de Datos",
+            p2_desc:   `Servicio de Windows construido con <strong>.NET 9.0</strong> que automatiza la sincronización de Excel a base de datos entre <strong>SharePoint</strong> y <strong>SQL Server</strong>. Usa <strong>Microsoft Graph API</strong> para recuperación segura de archivos, <strong>ClosedXML</strong> para parseo de Excel y procesamiento en background con <strong>Worker Service</strong>.`,
+            p3_title:  "Integración de Datos de Tareas",
+            p3_desc:   `Servicio de Windows construido en <strong>C#</strong> bajo <strong>.NET Framework 4.0</strong> para sincronizar y automatizar el intercambio de datos entre <strong>ClickUp</strong> y sistemas internos. Maneja comunicación API, procesamiento JSON con <strong>Newtonsoft.Json</strong> y monitoreo por logs para ejecución confiable en background.`,
+            p4_title:  "Sincronización entre Bases de Datos",
+            p4_desc:   `Aplicación de sincronización de datos desarrollada en <strong>C#</strong> con <strong>.NET 9.0</strong>, diseñada para mantener alineadas las bases de datos <strong>MySQL</strong> y <strong>SQL Server</strong> en tiempo real. Implementa manejo robusto de datos, compresión y hashing usando <strong>Google.Protobuf</strong>, <strong>LZ4</strong> y <strong>xxHash</strong>.`,
+            p5_title:  "Explorador Interactivo de Vehículos",
+            p5_desc:   `Aplicación web interactiva para explorar <strong>modelos de vehículos Foton</strong>. Desarrollada con <strong>Vue.js</strong>, <strong>HTML5</strong>, <strong>CSS3</strong> y <strong>JavaScript</strong>, con selectores de color, variantes de modelos, fichas técnicas y galerías multimedia. Incluye carga de datos por <strong>AJAX</strong> y soporte multiidioma en JSON.`,
+            p6_title:  "Autenticación & Gestión de Usuarios",
+            p6_desc:   `Sistema full-stack para <strong>autenticación y control de acceso</strong> integrando <strong>Azure AD</strong>, <strong>Active Directory</strong> y <strong>MySQL</strong>. Construido con <strong>ASP.NET Core Web API</strong> y frontend <strong>HTML5 / JavaScript</strong>, centraliza validación de credenciales y aprovisionamiento seguro de usuarios.`,
+            p7_title:  "Herramienta de Conversión de Leads",
+            p7_desc:   `Aplicación de escritorio construida con <strong>Electron</strong> para convertir exportaciones de leads de <strong>Clientify</strong> a plantillas de Excel compatibles con CRM. Proporciona una interfaz simple para cargar, procesar y formatear archivos usando scripts <strong>Node.js</strong>.`,
+            p8_title:  "Gestión de Listas de Vigilancia",
+            p8_desc:   `Sistema web para gestionar y auditar <strong>listas de vigilancia corporativas</strong> (PEP, listas negras, etc.). Soporta búsquedas por DNI/RTN en múltiples tablas, <strong>alertas por email</strong> en coincidencias, ciclo de vida de registros, <strong>importación/exportación Excel</strong> e historial de consultas.`,
+            p9_title:  "Sistema de Inventario de Cintas",
+            p9_desc:   `Plataforma web desarrollada para el <strong>Data Center GBM Honduras</strong> para gestionar y rastrear <strong>inventario de medios de cinta</strong>. Incluye gestión de roles (Root, Admin, Operador), reportes detallados, <strong>notificaciones SMTP</strong> e historial de acciones con trazabilidad. Construido con <strong>PHP</strong>, <strong>Node.js</strong>, <strong>Express.js</strong> y <strong>SQL Server</strong> en <strong>Ubuntu Server (Nginx)</strong>.`,
+            p10_title: "Sitio Web Interactivo de Videojuegos",
+            p10_desc:  `Sitio web de videojuegos construido con <strong>HTML5</strong>, <strong>CSS3</strong> y <strong>JavaScript</strong>, diseñado para ofrecer una experiencia de usuario limpia, responsiva e interactiva. Incluye <strong>modales</strong> dinámicos, listados en grid e integración de <strong>Bootstrap</strong> y <strong>Chart.js</strong>.`,
+            p11_title: "App de Búsqueda en Spotify & YouTube",
+            p11_desc:  `Aplicación web que integra las <strong>APIs de Spotify</strong> y <strong>YouTube</strong> para buscar, mostrar y reproducir canciones o videos directamente en el navegador. Construida con <strong>HTML5</strong>, <strong>CSS3</strong> y <strong>JavaScript</strong>, con búsqueda animada y diseño responsivo.`,
+            footer_connect: "Conectemos",
+            footer_sub:     "Siempre interesado en nuevas oportunidades, colaboraciones y conversaciones sobre tecnología y diseño.",
+            footer_phone:   "Teléfono",
+        }
+    };
+
+    let currentLang = 'en';
+
+    function applyLang(lang) {
+        const t = translations[lang];
+        // text nodes
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            if (t[el.dataset.i18n] !== undefined) el.textContent = t[el.dataset.i18n];
         });
-        document.querySelectorAll('.hover-target').forEach(t => {
-            t.addEventListener('mouseenter', () => document.body.classList.add('is-hovering'));
-            t.addEventListener('mouseleave', () => document.body.classList.remove('is-hovering'));
+        // html nodes
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            if (t[el.dataset.i18nHtml] !== undefined) el.innerHTML = t[el.dataset.i18nHtml];
         });
+        document.documentElement.lang = lang;
+    }
 
-        // SMOOTH SCROLL (LENIS)
-        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-        requestAnimationFrame(raf);
+    function toggleLang() {
+        currentLang = currentLang === 'en' ? 'es' : 'en';
+        applyLang(currentLang);
+        // update button
+        const flag = document.querySelector('.lang-flag');
+        const label = document.getElementById('langLabel');
+        if (currentLang === 'es') {
+            flag.textContent = '🇺🇸';
+            label.textContent = 'EN';
+        } else {
+            flag.textContent = '🇪🇸';
+            label.textContent = 'ES';
+        }
+    }
 
-        // GSAP ANIMATIONS
-        gsap.registerPlugin(ScrollTrigger);
+    // ─── CURSOR ──────────────────────────────────────────────────────────────
+    const cursor = document.querySelector('.custom-cursor');
+    document.addEventListener('mousemove', e => {
+        gsap.to(cursor, {x: e.clientX, y: e.clientY, duration: 0.1 });
+    });
+    document.querySelectorAll('.hover-target').forEach(t => {
+        t.addEventListener('mouseenter', () => document.body.classList.add('is-hovering'));
+        t.addEventListener('mouseleave', () => document.body.classList.remove('is-hovering'));
+    });
 
-        // Hero Reveal
-        gsap.from(".reveal-up", { opacity: 0, y: 20, duration: 1, delay: 0.2 });
-        gsap.from(".h1-rev", { y: "100%", duration: 1.5, ease: "power4.out", stagger: 0.1, delay: 0.3 });
+    // ─── SMOOTH SCROLL ───────────────────────────────────────────────────────
+    const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
 
-        // Basic Reveals
-        gsap.utils.toArray('.reveal').forEach(el => {
-            gsap.to(el, { y: 0, opacity: 1, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 85%" } });
+    // ─── GSAP ────────────────────────────────────────────────────────────────
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".reveal-up", { opacity: 0, y: 20, duration: 1, delay: 0.2 });
+    gsap.from(".h1-rev", { y: "100%", duration: 1.5, ease: "power4.out", stagger: 0.1, delay: 0.3 });
+    gsap.utils.toArray('.reveal').forEach(el => {
+        gsap.to(el, { y: 0, opacity: 1, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 85%" } });
+    });
+
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 769px)", () => {
+        const horizontalSection = document.querySelector('.desktop-pin');
+        const horizontalWrapper = document.querySelector('.horizontal-wrapper');
+        let getScrollAmount = () => -(horizontalWrapper.scrollWidth - window.innerWidth);
+        const tween = gsap.to(horizontalWrapper, { x: getScrollAmount, ease: "none" });
+        ScrollTrigger.create({
+            trigger: horizontalSection, start: "top top",
+            end: () => `+=${horizontalWrapper.scrollWidth}`,
+            pin: true, animation: tween, scrub: 1, invalidateOnRefresh: true
         });
+    });
 
-        // MATCHMEDIA PARA SCROLL HORIZONTAL (SOLO SE EJECUTA EN ESCRITORIO)
-        let mm = gsap.matchMedia();
-
-        mm.add("(min-width: 769px)", () => {
-            const horizontalSection = document.querySelector('.desktop-pin');
-            const horizontalWrapper = document.querySelector('.horizontal-wrapper');
-            
-            let getScrollAmount = () => -(horizontalWrapper.scrollWidth - window.innerWidth);
-            
-            const tween = gsap.to(horizontalWrapper, { x: getScrollAmount, ease: "none" });
-
-            ScrollTrigger.create({
-                trigger: horizontalSection,
-                start: "top top",
-                end: () => `+=${horizontalWrapper.scrollWidth}`, 
-                pin: true,
-                animation: tween,
-                scrub: 1,
-                invalidateOnRefresh: true
-            });
+    // ─── THEME INVERSION ─────────────────────────────────────────────────────
+    document.querySelectorAll('.trigger-dark').forEach(trigger => {
+        ScrollTrigger.create({
+            trigger, start: "top 50%", end: "bottom 50%",
+            onEnter: () => { document.body.style.backgroundColor = "var(--bg-dark)"; document.body.style.color = "var(--text-dark)"; },
+            onLeaveBack: () => { document.body.style.backgroundColor = "var(--bg-light)"; document.body.style.color = "var(--text-light)"; }
         });
-
-        // INVERSIÓN DINÁMICA DE TEMA
-        const darkTriggers = document.querySelectorAll('.trigger-dark');
-        darkTriggers.forEach(trigger => {
-            ScrollTrigger.create({
-                trigger: trigger, start: "top 50%", end: "bottom 50%",
-                onEnter: () => { document.body.style.backgroundColor = "var(--bg-dark)"; document.body.style.color = "var(--text-dark)"; },
-                onLeaveBack: () => { document.body.style.backgroundColor = "var(--bg-light)"; document.body.style.color = "var(--text-light)"; }
-            });
+    });
+    document.querySelectorAll('.trigger-light').forEach(trigger => {
+        ScrollTrigger.create({
+            trigger, start: "top 50%", end: "bottom 50%",
+            onEnter: () => { document.body.style.backgroundColor = "var(--bg-light)"; document.body.style.color = "var(--text-light)"; },
+            onLeaveBack: () => { document.body.style.backgroundColor = "var(--bg-dark)"; document.body.style.color = "var(--text-dark)"; }
         });
-
-        const lightTriggers = document.querySelectorAll('.trigger-light');
-        lightTriggers.forEach(trigger => {
-            ScrollTrigger.create({
-                trigger: trigger, start: "top 50%", end: "bottom 50%",
-                onEnter: () => { document.body.style.backgroundColor = "var(--bg-light)"; document.body.style.color = "var(--text-light)"; },
-                onLeaveBack: () => { document.body.style.backgroundColor = "var(--bg-dark)"; document.body.style.color = "var(--text-dark)"; }
-            });
-        });
+    });
     </script>
 </body>
 </html>
